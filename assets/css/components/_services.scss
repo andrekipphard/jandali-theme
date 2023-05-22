@@ -1,0 +1,29 @@
+.services-col {
+    background-image: linear-gradient(to top, #f7f7f7 50%, rgba(192, 192, 192, 0) 50%);
+}
+.img-zoom{
+    overflow: hidden;
+    position: relative;
+}
+.card img{
+    transition: transform 0.5s ease-in-out;
+    transform-origin: center;
+}
+.img-zoom-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.img-zoom:hover .img-zoom-overlay{
+    opacity: 1;
+}
+.img-zoom:hover img{
+    transform: scale(1.2);
+}
+
+

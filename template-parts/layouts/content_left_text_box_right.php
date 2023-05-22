@@ -1,0 +1,57 @@
+<?php 
+    $image = get_sub_field('image');
+    $headline = get_sub_field('headline');
+    $subline = get_sub_field('subline');
+    $background_color = get_sub_field('background_color');
+    $left_column = get_sub_field('left_column');
+    $video = get_sub_field('video');
+    $video_format = get_sub_field('video_format');
+    if( have_rows('textbox')):
+?>
+    <div style="background-color:<?= $background_color; ?>">
+        <div class="container py-4 py-lg-5">
+            <div class="row py-4 py-lg-5">
+                <div class="col">
+                    <?php if($subline):?><h2 class="subline text-uppercase text-secondary pb-1"><?= $subline; ?></h2><?php endif;?>
+                        <?php if($headline):?><h3 class="headline pb-3"><?= $headline; ?></h2><?php endif;?>
+                    <div class="row py-5 py-lg-5 overlap">
+                        <?php if($left_column == 'Parallax'):?>
+                            <div class="col-12 col-lg-7" style="background-image:url('<?= wp_get_attachment_image_url($image, 'full');?>'); background-size:auto 100%; background-position:left; background-repeat:no-repeat; background-attachment: fixed;">
+                            </div>
+                        <?php endif;?>
+                        <?php if($left_column == 'Image'):?>
+                            <div class="col-7">
+                                <img src="<?= wp_get_attachment_image_url($image, 'full');?>" class="img-fluid desktop-image">
+                            </div>
+                        <?php endif;?>
+                        <?php if($left_column == 'Video'):?>
+                            <div class="col-12 col-lg-7">
+                                <?php if($video_format =='Quer'):?><video width="100%" height="auto" src="<?=$video;?>" controls="true"></video><?php endif;?>
+                                <?php if($video_format =='Hoch'):?><video width="auto" height="100%" src="<?=$video;?>" controls="true"></video><?php endif;?>    
+                            </div>
+                        <?php endif;?>
+                        
+                        <div class="col-12 col-lg-5">
+                            <div class="ps-0 ps-lg-5 d-flex justify-content-center d-lg-block">
+                                <hr class="text-secondary opacity-100 w-50 align-self-center tagline">
+                            </div>
+                            <?php if($left_column == 'Parallax' || $left_column == 'Image'):?><img src="<?= wp_get_attachment_image_url($image, 'full');?>" class="img-fluid parallax-mobile mb-5"><?php endif;?>
+                            <?php while( have_rows('textbox') ): the_row();
+                                $headline = get_sub_field('headline');
+                                $text = get_sub_field('text');
+                            ?>
+                                <div class="ps-0 ps-lg-5 mt-3 mt-lg-0">
+                                <h4 class="text-uppercase"><?= $headline; ?></h3>
+                                <p><?= $text; ?></p>
+                                </div>
+                            <?php endwhile; ?>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+<?php endif; ?>

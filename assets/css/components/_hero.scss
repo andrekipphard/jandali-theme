@@ -1,0 +1,22 @@
+#carouselHero > .carousel-inner > .carousel-item{
+    height: 700px;
+}
+@include media-breakpoint-down(lg){
+    #carouselHero > .carousel-inner > .carousel-item{
+        height: 450px;
+    }
+    .hero-content{
+        z-index:1;
+    }
+    #carouselHero .carousel-control-prev, #carouselHero .carousel-control-next{
+        display:none;
+    }
+}
+@include media-breakpoint-up(lg){
+    .height-100{
+        height: 100%;
+    }
+    .hero-overlay{
+        display:none;
+    }
+}

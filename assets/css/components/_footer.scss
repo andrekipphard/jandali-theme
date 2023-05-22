@@ -1,0 +1,61 @@
+.site-footer ul{
+    list-style: none;
+    padding-left:0px;
+}
+.footer-logo{
+    margin-left:-24%;
+}
+.socials ul li, .mitgliedschaften ul li{
+    display:inline-block;
+    margin-right:20px;
+}
+.socials ul li:last-child, .mitgliedschaften ul li:last-child{
+    margin-right:0px;
+}
+.mitgliedschaften img{
+    width: 125px;
+    height: auto;
+}
+.site-info ul li{
+    display:inline-block;
+    margin-right:10px;
+    padding-right:10px;
+    border-right:1px solid #9CA8B0;
+}
+.site-info ul li:last-child{
+    margin-right:0px;
+    padding-right:0px;
+    border-right:0;
+}
+#colophon h6{
+    font-size:14px;
+}
+#colophon .no-before{
+    font-size:14px;
+    font-weight: 200;
+}
+#colophon a{
+    font-weight: 100;
+    font-size:14px;
+}
+#colophon a::before{
+    height: 0px;
+}
+#colophon p{
+    font-weight: 100;
+    font-size: 14px;
+}
+#colophon .site-info a, #colophon .site-info p{
+    color:#9CA8B0!important;
+}
+@include media-breakpoint-down(lg) {
+    .footer-logo{
+        margin-left:0;
+        margin-bottom:10px;
+        width: 60%;
+    }
+    .mitgliedschaften img{
+        width: 90px;
+        height: auto;
+    }
+}

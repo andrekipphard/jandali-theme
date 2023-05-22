@@ -1,0 +1,23 @@
+.hero-single{
+    height: 600px;
+}
+.bg-primary-opacity-half{
+    background-color:rgba($primary, 0.8);
+}
+.hero-single .tagline, .hero-single-text .tagline{
+    margin-bottom:20px;
+    margin-top:-44px;
+}
+.hero-single-text{
+    height: auto;
+}
+.hero-single h1, .hero-single-text h1{
+    font-weight: 200;
+    font-size: 32px;
+    line-height: 50px;
+}
+@include media-breakpoint-down(lg){
+    .hero-single{
+        height: auto;
+    }
+}

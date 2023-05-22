@@ -1,0 +1,44 @@
+.floating-socials{
+    position: fixed;
+    right:0;
+    width: 60px;
+    margin-top: 150px;
+    transition: all 0.3s linear;
+    box-shadow: 2px 2px 8px 0px rgba(0,0,0,.4);
+    z-index:999;
+}
+
+.floating-socials ul {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+.floating-socials li{
+    height: 45px;
+    position:relative;
+}
+.floating-socials li a{
+    color: #fff !important;
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 45px;
+    padding-left:25%;
+    transition: all .3s linear;
+    text-decoration: none !important;
+}
+.floating-socials li a i{
+    position: absolute;
+    left: 20px;
+    font-size: 15px;
+}
+.floating-socials a:hover {
+    z-index:1;
+    width: 200px;
+    box-shadow: 2px 2px 8px 0px rgba(0,0,0,.4);
+    transform: translate(-15px, 0);
+}
+@include media-breakpoint-down(lg) {
+    .floating-socials{
+        display:none;
+    }
+}

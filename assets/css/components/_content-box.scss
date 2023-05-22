@@ -1,0 +1,10 @@
+.content-box{
+    border-top:solid 20px $secondary;
+}
+.content-box a{
+    color:inherit;
+    font-weight: inherit;
+}
+.content-box a:before{
+    height: 0px;
+}

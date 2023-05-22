@@ -1,0 +1,19 @@
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index:999;
+    border: 0px;
+    font-size: 70px;
+    color: $secondary;
+    -webkit-text-stroke: 2px transparent;
+}
+#btn-back-to-top:hover{
+    background:transparent!important;
+    background-position: 0% 200%!important;
+}
+@include media-breakpoint-down(lg) {
+    #btn-back-to-top{
+        font-size:40px;
+    }
+}

@@ -1,0 +1,18 @@
+.quote{
+    width:35px;
+    height: auto;
+}
+#carouselTestimonial h3{
+    font-size: 16px;
+}
+#carouselTestimonialMobile{
+    display:none;
+}
+@include media-breakpoint-down(lg){
+    #carouselTestimonialMobile{
+        display:block;
+    }
+    #carouselTestimonial{
+        display:none;
+    }
+}
