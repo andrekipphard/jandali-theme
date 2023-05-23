@@ -11,7 +11,7 @@
 ?>
 <div style="background-color:<?= $background_color; ?>"  class="col-<?= $col; ?>">
     <div class="container">
-        <div class="row py-4 py-lg-5 <?php if($border == 'Ja'): ?> border-bottom<?php endif;?>">
+        <div class="row py-4 py-lg-5 <?php if($border == 'Ja'): ?> border-bottom border-secondary<?php endif;?>">
             <div class="col py-4 py-lg-5">
                 <h2 class="subline text-uppercase text-secondary pb-1"><?= $subline; ?></h2>
                 <h3 class="headline pb-lg-3"><?= $headline; ?></h2>
