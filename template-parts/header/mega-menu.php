@@ -4,7 +4,7 @@
     <div class="mega-menu-bar <?php if(is_front_page()):?>mega-menu-bar-startseite<?php endif;?>" style="border-top:5px solid <?= $menu_border_color?>;">
         <div class="container">
             <div class="row main-navigation mega-menu <?php if(is_front_page()):?>opacity-bg-25<?php endif;?>">
-                <div class="col">
+                <div class="col ps-0 pe-0">
                 <?php if ( have_rows( 'menu', 'options' ) ) : ?>
                     <ul class="d-flex justify-content-between mb-0">
                         <?php while ( have_rows( 'menu', 'options' ) ) : the_row(); 

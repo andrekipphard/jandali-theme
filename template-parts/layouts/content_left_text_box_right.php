@@ -6,6 +6,7 @@
     $left_column = get_sub_field('left_column');
     $video = get_sub_field('video');
     $video_format = get_sub_field('video_format');
+    $video_type = get_sub_field('video_type');
     if( have_rows('textbox')):
 ?>
     <div style="background-color:<?= $background_color; ?>">
@@ -26,8 +27,25 @@
                         <?php endif;?>
                         <?php if($left_column == 'Video'):?>
                             <div class="col-12 col-lg-7">
-                                <?php if($video_format =='Quer'):?><video width="100%" height="auto" src="<?=$video;?>" controls="true"></video><?php endif;?>
-                                <?php if($video_format =='Hoch'):?><video width="auto" height="100%" src="<?=$video;?>" controls="true"></video><?php endif;?>    
+                                <?php if($video_format =='Quer'):?>
+                                    <?php if($video_type == 'Youtube'):?>
+                                        <iframe class="desktop-iframe" width="100%" height="400px" src="<?=$video;?>" frameborder="0" allowfullscreen></iframe>
+                                        <iframe class="mobile-iframe" width="100%" height="200px" src="<?=$video;?>" frameborder="0" allowfullscreen></iframe>
+                                    <?php endif;?>
+                                    <?php if($video_type == 'Self Hosted'):?>
+                                        <video width="100%" height="auto" src="<?=$video;?>" controls="true"></video>
+                                    <?php endif;?>
+                                <?php endif;?>
+                                <?php if($video_format =='Hoch'):?>
+                                    <?php if($video_type == 'Youtube'):?>
+                                        <iframe class="desktop-iframe" width="auto" height="400px" src="<?=$video;?>" frameborder="0" allowfullscreen></iframe>
+                                        <iframe class="mobile-iframe" width="auto" height="200px" src="<?=$video;?>" frameborder="0" allowfullscreen></iframe> 
+                                    <?php endif;?>
+                                    <?php if($video_type == 'Self Hosted'):?>
+                                        <video width="auto" height="100%" src="<?=$video;?>" controls="true"></video>
+                                    <?php endif;?>
+                                <?php endif;?>  
+                                 
                             </div>
                         <?php endif;?>
                         

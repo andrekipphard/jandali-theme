@@ -28,10 +28,12 @@ input:-internal-autofill-selected {
 .main-navigation ul{
     list-style:none;
 }
-
+.main-navigation li:not(:last-child){
+    margin-right: 10px;
+}
 .main-navigation li {
     display: inline-block;
-    margin-right: 10px;
+    
 }
 .main-navigation li:not(.no-before)::before{
     display:none;

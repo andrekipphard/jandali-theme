@@ -3,3 +3,18 @@
     position:relative;
     margin-top:-40px;
 }
+@include media-breakpoint-down(lg){
+    .contact-info{
+        margin-top:0px;
+    }
+    .contact-info-bg{
+        background-color:$primary!important;
+    }
+    .contact-infos-row{
+        padding-left: 20px; 
+        padding-right: 20px;
+    }
+    .contact-info-row{
+        margin-bottom:20px;
+    }
+}

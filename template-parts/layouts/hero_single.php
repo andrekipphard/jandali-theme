@@ -14,8 +14,8 @@
         </div>
         <?php if($layout == 'Image'):?>
             <div class="row py-5 py-lg-3 mt-0 mt-lg-4 hero-single" style="background-image:url('<?= wp_get_attachment_image_url($image, 'full');?>'); background-position:left; background-size:contain; background-repeat:no-repeat;">
-                <div class="col-12 col-lg-5 offset-0 offset-lg-7 d-flex flex-column justify-content-center flex-lg-row align-items-center">
-                    <div class="p-4 bg-primary-opacity-half">
+                <div class="col-12 col-lg-5 offset-0 offset-lg-7 d-flex flex-column justify-content-center flex-lg-row align-items-center position-relative">
+                    <div class="p-4 bg-primary-opacity-half hero-overlap">
                         <hr class="text-secondary opacity-100 w-50 align-self-center tagline">
                         <h1 class="text-white"><?= $headline; ?></h1>
                         <p class="text-white"><?= $text; ?></p>

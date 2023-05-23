@@ -143,7 +143,7 @@ function jandali_scripts() {
 	//wp_style_add_data( 'jandali-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'jandali-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), _S_VERSION, true );
-
+	wp_enqueue_script( 'jandali/header-mobile-sub-menu', get_template_directory_uri(). '/assets/js/header-mobile-sub-menu.js', array('jquery'), _S_VERSION );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

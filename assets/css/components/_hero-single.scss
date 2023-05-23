@@ -16,8 +16,17 @@
     font-size: 32px;
     line-height: 50px;
 }
+
+
 @include media-breakpoint-down(lg){
     .hero-single{
         height: auto;
+    }
+}
+@include media-breakpoint-up(lg){
+    .hero-overlap{
+        position: absolute;
+        left:-200px;
+        right:200px;
     }
 }

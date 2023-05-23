@@ -11,7 +11,7 @@
                     $content = get_sub_field('content');
                     $background_color_content = get_sub_field('background_color_content');
                 ?>
-                    <div class="col-12 col-lg-3">
+                    <div class="col-12 col-lg-4">
                         <div class="card content-card border-0 rounded-0 h-100">
                             <img src="<?= wp_get_attachment_image_url($image, 'img-fluid');?>" class="card-img-top rounded-0">
                             <div class="card-body py-4 px-4" style="background-color:<?= $background_color_content; ?>">

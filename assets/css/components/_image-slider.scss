@@ -172,6 +172,9 @@
   .swiper-row-mobile{
     display:none;
 }
+.slider-subline{
+    font-size: 26px;
+}
 @include media-breakpoint-down(lg){
     .swiper-row-mobile{
         display:block;
@@ -201,4 +204,5 @@
     .slider-subline{
         font-size: 22px;
     }
+
 }
