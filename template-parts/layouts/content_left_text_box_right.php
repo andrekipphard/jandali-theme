@@ -14,7 +14,7 @@
             <div class="row py-4 py-lg-5">
                 <div class="col">
                     <?php if($subline):?><h2 class="subline text-uppercase text-secondary pb-1"><?= $subline; ?></h2><?php endif;?>
-                        <?php if($headline):?><h3 class="headline pb-3"><?= $headline; ?></h2><?php endif;?>
+                        <?php if($headline):?><h3 class="headline pb-3 mb-4 mb-lg-0"><?= $headline; ?></h2><?php endif;?>
                     <div class="row py-5 py-lg-5 overlap">
                         <?php if($left_column == 'Parallax'):?>
                             <div class="col-12 col-lg-7" style="background-image:url('<?= wp_get_attachment_image_url($image, 'full');?>'); background-size:auto 100%; background-position:left; background-repeat:no-repeat; background-attachment: fixed;">
