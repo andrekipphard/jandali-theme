@@ -1,15 +1,23 @@
 <?php 
     $headline = get_sub_field('headline');
     $testimonials = get_sub_field('testimonial');
-    $loop = 1;
+    
 ?>
 <div class="bg-primary">
     <div class="container py-3 py-lg-5">
-        <div class="row pt-5 pb-3 py-lg-5">
+        <div class="row pt-5 pb-5 py-lg-5">
             <div class="col">
                 <h2 class="topline text-uppercase text-secondary text-center"><?= $headline; ?></h2>
                 <div id="carouselTestimonialMobile" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <?php $loop = 0;?>
+                        <?php foreach (array_chunk($testimonials, 1) as $chunk):?>
+                            <button type="button" data-bs-target="#carouselTestimonialMobile" data-bs-slide-to="<?= $loop;?>" <?php if ($loop ==0):?>class="active" <?php endif;?>aria-current="true" aria-label="Slide <?= $loop;?>"></button>
+                            <?php $loop++;?>
+                        <?php endforeach;?>
+                    </div>
                     <div class="carousel-inner">
+                        <?php $loop = 1;?>
                         <?php foreach (array_chunk($testimonials, 1) as $chunk):?>
                             <div class="carousel-item <?php if ($loop ==1): echo'active'; endif;?>">
                                 <div class="row">

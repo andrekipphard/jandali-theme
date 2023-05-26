@@ -199,12 +199,16 @@ ul {
 .parallax-mobile{
     display:none;
 }
+
 @include media-breakpoint-up(lg){
     .w-lg-75{
         width: 75%!important;
     }
 }
 @include media-breakpoint-down(lg){
+    .mobile-hide{
+        display:none;
+    }
     .overlap{
         background-color:white;
     }

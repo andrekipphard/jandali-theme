@@ -1,11 +1,20 @@
 .mobile-iframe{
     display:none;
 }
+.mobile-video{
+    display:none;
+}
 @include media-breakpoint-down(lg){
     .desktop-iframe{
         display:none;
     }
+    .desktop-video{
+        display:none;
+    }
     .mobile-iframe{
+        display:block;
+    }
+    .mobile-video{
         display:block;
     }
 }

@@ -1,6 +1,7 @@
+<?php $show_menus_on_mobile = get_field( 'show_menus_on_mobile', 'options' );?>
 <?php if(have_rows('menus', 'options')):
     while(have_rows('menus', 'options')): the_row();?>
-        <div class="col-6 col-lg-3">
+        <div class="col-6 col-lg-3 <?php if($show_menus_on_mobile == "Nein"):?>mobile-hide<?php endif;?>">
             <?php while(have_rows('spalte', 'options')): the_row(); ?>
                 <?php $menu = get_sub_field('menu'); ?>
                 <div class="h6 text-uppercase text-secondary">

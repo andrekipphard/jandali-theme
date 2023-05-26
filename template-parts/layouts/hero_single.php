@@ -7,7 +7,7 @@
 ?>
 <div style="background-color:<?= $background_color; ?>">
     <div class="container">
-        <div class="row pt-4 border-bottom border-light">
+        <div class="row pt-4 border-bottom border-light breadcrumb-row">
             <div class="col ps-lg-0">
                 <?php if (function_exists('nav_breadcrumb')) nav_breadcrumb(); ?>
             </div>

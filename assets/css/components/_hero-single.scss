@@ -19,6 +19,9 @@
 
 
 @include media-breakpoint-down(lg){
+    .breadcrumb-row{
+        display:none;
+    }
     .hero-single{
         height: auto;
     }

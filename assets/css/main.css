@@ -12229,6 +12229,16 @@ input:-internal-autofill-selected {
   display: none;
 }
 
+.carousel-indicators {
+  bottom: -45px;
+}
+
+.carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  background-color: #AE8A51;
+}
+
 @media (max-width: 991.98px) {
   #carouselTestimonialMobile {
     display: block;
@@ -12509,6 +12519,9 @@ input:-internal-autofill-selected {
 }
 
 @media (max-width: 991.98px) {
+  .breadcrumb-row {
+    display: none;
+  }
   .hero-single {
     height: auto;
   }
@@ -12630,11 +12643,21 @@ input:-internal-autofill-selected {
   display: none;
 }
 
+.mobile-video {
+  display: none;
+}
+
 @media (max-width: 991.98px) {
   .desktop-iframe {
     display: none;
   }
+  .desktop-video {
+    display: none;
+  }
   .mobile-iframe {
+    display: block;
+  }
+  .mobile-video {
     display: block;
   }
 }
@@ -12848,6 +12871,9 @@ ul {
   }
 }
 @media (max-width: 991.98px) {
+  .mobile-hide {
+    display: none;
+  }
   .overlap {
     background-color: white;
   }

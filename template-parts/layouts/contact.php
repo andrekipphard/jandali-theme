@@ -50,7 +50,7 @@
                         <textarea class="ohnohoney" id="messageInput" rows="3"></textarea>
                     </div>
                     <div class="mb-3">
-                        <div class="row">
+                        <div class="row px-0">
                             <div class="col-12 col-lg-6 form-floating">
                                 <input type="text" class="form-control" id="nameqay" name="nameqay" placeholder="Vollständiger Name *" required>
                                 <label for="nameqay" class="form-label form-label-margin-left text-primary">Vollständiger Name *</label>

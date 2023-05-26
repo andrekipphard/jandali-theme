@@ -30,19 +30,17 @@
                                 <?php if($video_format =='Quer'):?>
                                     <?php if($video_type == 'Youtube'):?>
                                         <iframe class="desktop-iframe" width="100%" height="400px" src="<?=$video;?>" frameborder="0" allowfullscreen></iframe>
-                                        <iframe class="mobile-iframe" width="100%" height="200px" src="<?=$video;?>" frameborder="0" allowfullscreen></iframe>
                                     <?php endif;?>
                                     <?php if($video_type == 'Self Hosted'):?>
-                                        <video width="100%" height="auto" src="<?=$video;?>" controls="true"></video>
+                                        <video class="desktop-video" width="100%" height="auto" src="<?=$video;?>" controls="true"></video>
                                     <?php endif;?>
                                 <?php endif;?>
                                 <?php if($video_format =='Hoch'):?>
                                     <?php if($video_type == 'Youtube'):?>
                                         <iframe class="desktop-iframe" width="auto" height="400px" src="<?=$video;?>" frameborder="0" allowfullscreen></iframe>
-                                        <iframe class="mobile-iframe" width="auto" height="200px" src="<?=$video;?>" frameborder="0" allowfullscreen></iframe> 
                                     <?php endif;?>
                                     <?php if($video_type == 'Self Hosted'):?>
-                                        <video width="auto" height="100%" src="<?=$video;?>" controls="true"></video>
+                                        <video class="desktop-video" width="auto" height="100%" src="<?=$video;?>" controls="true"></video>
                                     <?php endif;?>
                                 <?php endif;?>  
                                  
@@ -54,6 +52,24 @@
                                 <hr class="text-secondary opacity-100 w-50 align-self-center tagline">
                             </div>
                             <?php if($left_column == 'Parallax' || $left_column == 'Image'):?><img src="<?= wp_get_attachment_image_url($image, 'full');?>" class="img-fluid parallax-mobile mb-5"><?php endif;?>
+                            <?php if($left_column == 'Video'):?>
+                                <?php if($video_format =='Quer'):?>
+                                    <?php if($video_type == 'Youtube'):?>
+                                        <iframe class="mobile-iframe" width="100%" height="200px" src="<?=$video;?>" frameborder="0" allowfullscreen></iframe>
+                                    <?php endif;?>
+                                    <?php if($video_type == 'Self Hosted'):?>
+                                        <video class="mobile-video" width="100%" height="auto" src="<?=$video;?>" controls="true"></video>
+                                    <?php endif;?>
+                                <?php endif;?>
+                                <?php if($video_format =='Hoch'):?>
+                                    <?php if($video_type == 'Youtube'):?>
+                                        <iframe class="mobile-iframe" width="auto" height="200px" src="<?=$video;?>" frameborder="0" allowfullscreen></iframe> 
+                                    <?php endif;?>
+                                    <?php if($video_type == 'Self Hosted'):?>
+                                        <video class="mobile-video" width="auto" height="100%" src="<?=$video;?>" controls="true"></video>
+                                    <?php endif;?>
+                                <?php endif;?>  
+                            <?php endif;?>
                             <?php while( have_rows('textbox') ): the_row();
                                 $headline = get_sub_field('headline');
                                 $text = get_sub_field('text');
