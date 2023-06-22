@@ -2,6 +2,10 @@
     <div id="carouselBG-Image-Text" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <?php while( have_rows('slide') ): the_row();
+                $slide = get_sub_field('slide');
+                if (is_array($slide)) {
+                    $count = count($slide);
+                    }
                 $headline = get_sub_field('headline');
                 $subline = get_sub_field('subline');
                 $text = get_sub_field('text');
@@ -15,12 +19,13 @@
                             <div class="row">
                                 <div class="col-12 col-lg-5">
                                     <div class="bg-white p-5 p-lg-5 my-5 d-flex flex-column">
-                                        <hr class="text-secondary opacity-100 w-50 align-self-center tagline">
-                                        <h3 class="text-uppercase pb-3"><?php if(get_row_index()<10):?>0<?php endif;?><?= get_row_index();?> - <?= $subline; ?></h3>
+                                        <hr class="text-secondary opacity-100 w-50 tagline">
+                                        <h3 class="text-uppercase pb-3"><?php if (is_array($slide) && $count > 1):?><?php if(get_row_index()<10):?>0<?php endif;?><?= get_row_index();?><?php endif;?> <span class="gedankenstrich"><?= $subline; ?></span></h3>
                                         <h2 class="text-secondary mb-4"><?= $headline; ?></h2>
                                         <p><?= $text; ?></p>
-                                        <a href="<?= $button_url; ?>"><button class="btn btn-link ps-0" type="button"><i class="bi bi-chevron-right text-secondary"></i><?= $button_text; ?></button></a>
                                         <hr class="text-secondary opacity-100">
+                                        <a href="<?= $button_url; ?>"><button class="btn btn-link ps-0" type="button"><i class="bi bi-chevron-right text-secondary"></i><?= $button_text; ?></button></a>
+                                        
                                         <?php if( have_rows('logos')):?>
                                             <div class="row">
                                                 <?php while( have_rows('logos') ): the_row();
@@ -45,11 +50,12 @@
                                 <div class="col-12 col-lg-5">
                                     <div class="bg-white p-5 my-5 d-flex flex-column">
                                         <hr class="text-secondary opacity-100 w-50 align-self-center tagline">
-                                        <h3 class="text-uppercase pb-3"><?php if(get_row_index()<10):?>0<?php endif;?><?= get_row_index();?> - <?= $subline; ?></h3>
+                                        <h3 class="text-uppercase pb-3"><?php if (is_array($slide) && $count > 1):?><?php if(get_row_index()<10):?>0<?php endif;?><?= get_row_index();?><?php endif;?> <span class="gedankenstrich"><?= $subline; ?></span></h3>
                                         <h2 class="text-secondary mb-4"><?= $headline; ?></h2>
                                         <p><?= $text; ?></p>
-                                        <a href="<?= $button_url; ?>"><button class="btn btn-link ps-0" type="button"><i class="bi bi-chevron-right text-secondary"></i><?= $button_text; ?></button></a>
                                         <hr class="text-secondary opacity-100">
+                                        <a href="<?= $button_url; ?>"><button class="btn btn-link ps-0" type="button"><i class="bi bi-chevron-right text-secondary"></i><?= $button_text; ?></button></a>
+                                        
                                         <?php if( have_rows('logos')):?>
                                             <div class="row">
                                                 <?php while( have_rows('logos') ): the_row();

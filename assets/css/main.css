@@ -12062,7 +12062,8 @@ input:-internal-autofill-selected {
 }
 
 .footer-logo {
-  margin-left: -24%;
+  width: 80%;
+  margin-top: -26px;
 }
 
 .socials ul li, .mitgliedschaften ul li {
@@ -12129,6 +12130,11 @@ input:-internal-autofill-selected {
     width: 90px;
     height: auto;
   }
+  .footer-logo {
+    width: 100%;
+    margin-top: -20px;
+    margin-bottom: 40px;
+  }
 }
 #carouselHero > .carousel-inner > .carousel-item {
   height: 700px;
@@ -12143,6 +12149,9 @@ input:-internal-autofill-selected {
   }
   #carouselHero .carousel-control-prev, #carouselHero .carousel-control-next {
     display: none;
+  }
+  h1, .h1 {
+    color: white;
   }
 }
 @media (min-width: 992px) {
@@ -12183,6 +12192,11 @@ input:-internal-autofill-selected {
   line-height: 29px;
 }
 
+.gedankenstrich::before {
+  content: "—"; /* Code für den Gedankenstrich */
+  margin-right: 0.2em; /* optionaler Abstand nach rechts */
+}
+
 .services-col {
   background-image: linear-gradient(to top, #f7f7f7 50%, rgba(192, 192, 192, 0) 50%);
 }
@@ -12214,6 +12228,25 @@ input:-internal-autofill-selected {
 
 .img-zoom:hover img {
   transform: scale(1.2);
+}
+
+.services-col .col-12 {
+  display: flex;
+  flex-direction: column;
+}
+
+.services-col .row {
+  flex: 1;
+}
+
+.services-col .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.services-col .card-body {
+  flex-grow: 1;
 }
 
 .quote {
@@ -12529,12 +12562,12 @@ input:-internal-autofill-selected {
 @media (min-width: 992px) {
   .hero-overlap {
     position: absolute;
-    left: -200px;
-    right: 200px;
+    left: -50px;
+    right: 50px;
   }
 }
 .content-card img {
-  margin-bottom: -95px;
+  margin-bottom: -75px;
   transform: scale(0.8);
 }
 
@@ -12678,12 +12711,12 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
 }
 
 h4, .h4 {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
 }
 

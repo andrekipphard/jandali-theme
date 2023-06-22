@@ -11,6 +11,9 @@
     #carouselHero .carousel-control-prev, #carouselHero .carousel-control-next{
         display:none;
     }
+    h1{
+        color:white;
+    }
 }
 @include media-breakpoint-up(lg){
     .height-100{
@@ -19,4 +22,5 @@
     .hero-overlay{
         display:none;
     }
+    
 }

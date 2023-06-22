@@ -15,8 +15,8 @@
 
                     </div>
                     <div class="col-12 col-lg-5 hero-content">
-                        <h1 class="text-white"><?= $headline; ?></h1>
-                        <p class="py-3 text-white"><?= $text; ?></p>
+                        <h1 class=""><?= $headline; ?></h1>
+                        <p class="py-3 text-secondary"><?= $text; ?></p>
                         <?php if(have_rows('buttons')):?>
                             <?php while(have_rows('buttons')): the_row();
                                 $button_text = get_sub_field('button_text');

@@ -24,7 +24,7 @@
                                     <div class="img-zoom-overlay">
                                     </div>
                                 </div>
-                                <div class="card-body py-4 px-lg-5">
+                                <div class="card-body py-4 px-lg-4">
                                     <h4 class="text-uppercase"><?= $titel; ?></h4>
                                     <p><?= $text; ?></p>
                                 </div>

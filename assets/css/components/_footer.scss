@@ -3,7 +3,8 @@
     padding-left:0px;
 }
 .footer-logo{
-    margin-left:-24%;
+    width:80%;
+    margin-top:-26px;
 }
 .socials ul li, .mitgliedschaften ul li{
     display:inline-block;
@@ -57,5 +58,10 @@
     .mitgliedschaften img{
         width: 90px;
         height: auto;
+    }
+    .footer-logo{
+        width:100%;
+        margin-top:-20px;
+        margin-bottom:40px;
     }
 }

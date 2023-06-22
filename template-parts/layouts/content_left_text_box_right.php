@@ -7,6 +7,8 @@
     $video = get_sub_field('video');
     $video_format = get_sub_field('video_format');
     $video_type = get_sub_field('video_type');
+    $button_text = get_sub_field('button_text');
+    $button_url = get_sub_field('button_url');
     if( have_rows('textbox')):
 ?>
     <div style="background-color:<?= $background_color; ?>">
@@ -75,11 +77,18 @@
                                 $text = get_sub_field('text');
                             ?>
                                 <div class="ps-0 ps-lg-5 mt-3 mt-lg-0">
-                                <h4 class="text-uppercase"><?= $headline; ?></h3>
-                                <p><?= $text; ?></p>
+                                    <h4 class="text-uppercase"><?= $headline; ?></h3>
+                                    <p><?= $text; ?></p>
                                 </div>
                             <?php endwhile; ?>
-                            </div>
+                            <?php if($button_text):?>
+                                <div class="ps-0 ps-lg-5 mt-3 mt-lg-0">
+                                    <hr class="text-secondary opacity-100">
+                                    <a href="<?= $button_url; ?>"><button class="btn btn-link ps-0" type="button"><i class="bi bi-chevron-right text-secondary"></i><?= $button_text; ?></button></a>
+                                </div>
+                            <?php endif;?>
+                            
+                            
                             
                         </div>
                     </div>

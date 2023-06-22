@@ -25,5 +25,22 @@
 .img-zoom:hover img{
     transform: scale(1.2);
 }
-
+.services-col .col-12 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .services-col .row {
+    flex: 1;
+  }
+  
+  .services-col .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .services-col .card-body {
+    flex-grow: 1;
+  }
 

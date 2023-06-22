@@ -15,7 +15,7 @@
 		<div class="border-bottom">
 			<div class="container">
 				<div class="row pt-5 pb-3 py-lg-5 text-white">
-					<div class="col-12 col-lg-3">
+					<div class="col-12 col-lg-12">
 						<?php get_template_part( 'template-parts/footer/contact' );?>
 					</div>
 					<?php get_template_part( 'template-parts/footer/menus' );?>
@@ -33,7 +33,7 @@
 		<div class="container">
 			<div class="site-info text-white pt-4 pb-3">
 				<?php if(have_rows('rechtliches', 'options')):?>
-					<ul class="d-flex justify-content-center">
+					<ul class="d-flex">
 						<?php while(have_rows('rechtliches', 'options')): the_row();
 							$text = get_sub_field('text');
 							$url = get_sub_field('url');?>
@@ -41,7 +41,7 @@
 						<?php endwhile;?>
 					</ul>
 				<?php endif;?>
-				<p class="text-center mb-0">
+				<p class="mb-0">
 					© <?php echo date("Y"); ?> <?php if ( $copyright = get_field( 'copyright', 'options' ) ):?><?= $copyright;?><?php endif;?>
 				</p>
 			</div><!-- .site-info -->
