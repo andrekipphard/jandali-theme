@@ -5,3 +5,7 @@
 #carouselBG-Image-Text p{
     line-height: 29px;
 }
+.gedankenstrich::before {
+    content: "\2014"; /* Code für den Gedankenstrich */
+    margin-right: 0.2em; /* optionaler Abstand nach rechts */
+  }
