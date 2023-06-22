@@ -21,7 +21,7 @@
                     <p class="pt-3"><?= $text; ?></p>
                 <?php endif;?>
                 <!-- Image above text -->
-                <?php if($image_left && $image_right && $bildposition == 'Top' && $bild == 'Ja'):?>
+                <?php if($bildposition == 'Top' && $bild == 'Ja'):?>
                     <div class="row">
                         <?php if($overlapping_images == 'Ja'):?>
                             <div class="col-6">
@@ -41,7 +41,7 @@
                     <p class="pt-3"><?= $text; ?></p>
                 <?php endif;?>
                 <!-- Image below text -->
-                <?php if($image_left && $image_right && $bildposition == 'Bottom' && $bild == 'Ja'):?>
+                <?php if($bildposition == 'Bottom' && $bild == 'Ja'):?>
                     <p class="py-3"><?= $text; ?></p>
                     <div class="row">
                         <?php if($overlapping_images == 'Ja'):?>
@@ -61,7 +61,7 @@
                     
                 <?php endif;?>
                 <!-- Image left of text -->
-                <?php if($image_left && $image_right && $bildposition == 'Left' && $bild == 'Ja'):?>
+                <?php if($bildposition == 'Left' && $bild == 'Ja'):?>
                 <div class="row py-lg-3">
                     <div class="col-12 col-lg-6">
                     <div class="row">
@@ -86,7 +86,7 @@
                 </div>
                 <?php endif;?>
                 <!-- Image right of text -->
-                <?php if($image_left && $image_right && $bildposition == 'Right' && $bild == 'Ja'):?>
+                <?php if($bildposition == 'Right' && $bild == 'Ja'):?>
                 <div class="row py-5">
                     <div class="col-12 col-lg-6">
                         <p class="py-3"><?= $text; ?></p>
