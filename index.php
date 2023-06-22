@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Jandali
+ * @package augusta_beauty
  */
 
 get_header();

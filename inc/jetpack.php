@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package Jandali
+ * @package augusta_beauty
  */
 
 /**
@@ -14,13 +14,13 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function jandali_jetpack_setup() {
+function augusta_beauty_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => 'jandali_infinite_scroll_render',
+			'render'    => 'augusta_beauty_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
@@ -33,7 +33,7 @@ function jandali_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'jandali-style',
+				'stylesheet' => 'augusta_beauty-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,13 +48,13 @@ function jandali_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'jandali_jetpack_setup' );
+add_action( 'after_setup_theme', 'augusta_beauty_jetpack_setup' );
 
-if ( ! function_exists( 'jandali_infinite_scroll_render' ) ) :
+if ( ! function_exists( 'augusta_beauty_infinite_scroll_render' ) ) :
 	/**
 	 * Custom render function for Infinite Scroll.
 	 */
-	function jandali_infinite_scroll_render() {
+	function augusta_beauty_infinite_scroll_render() {
 		while ( have_posts() ) {
 			the_post();
 			if ( is_search() ) :
