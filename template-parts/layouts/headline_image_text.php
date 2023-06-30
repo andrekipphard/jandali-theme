@@ -13,9 +13,10 @@
     $border = get_sub_field('border');
     $background_color = get_sub_field('background_color');
     $abstand = get_sub_field('abstand');
+    $anker = get_sub_field('anker');
 ?>
 <div style="background-color:<?= $background_color; ?>"  class="col-<?= $col; ?>">
-    <div class="container">
+    <div class="container" id="<?= $anker;?>">
         <div class="row<?php if($abstand == 'Ja'): ?> py-4 py-lg-5<?php endif;?><?php if($abstand== 'Nein'): ?> pt-4 pt-lg-5<?php endif?> <?php if($border == 'Ja'): ?> border-bottom border-secondary<?php endif;?>">
             <div class="col <?php if($abstand == 'Ja'): ?> py-4 py-lg-5<?php endif;?><?php if($abstand == 'Nein'): ?> pt-4 pt-lg-5<?php endif?>">
                 <h2 class="subline text-uppercase text-secondary pb-1"><?= $subline; ?></h2>
