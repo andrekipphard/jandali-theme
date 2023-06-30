@@ -17,15 +17,16 @@
                         $icon = get_sub_field('icon');
                         $titel = get_sub_field('titel');
                         $text = get_sub_field('text');
+                        $url = get_sub_field('url');
                     ?>
                         <div class="col-12 col-lg-3 mb-3 mb-lg-0">
                             <div class="row">
                                 <div class="col-2">
-                                    <i class="bi bi-<?= $icon; ?> fs-2 text-primary"></i>
+                                    <a href="<?=$url;?>"><i class="bi bi-<?= $icon; ?> fs-2 text-primary"></i></a>
                                 </div>
                                 <div class="col-10">
                                     <h6 class="text-uppercase text-primary"><?= $titel; ?></h6>
-                                    <p class="mb-0 text-primary"><?= $text; ?></p>
+                                    <a href="<?=$url;?>"><p class="mb-0 text-primary"><?= $text; ?></p></a>
                                 </div>
                             </div>
                         </div>

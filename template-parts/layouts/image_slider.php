@@ -16,16 +16,19 @@
                                 <?php while( have_rows('images') ): the_row();
                                     $image = get_sub_field('image');
                                     $titel = get_sub_field('titel');
+                                    $url = get_sub_field('url');
                                 ?>
                                 <div class="swiper-slide">
                                     <div class="col d-flex justify-content-center align-items-center">
                                         <div class="p-3">
-                                            <div class="overlay-transparent">
-                                                <div class="no-overflow">
-                                                    <img class="img-fluid" src="<?= wp_get_attachment_image_url($image, 'full');?>">
+                                            <a href="<?=$url;?>">
+                                                <div class="overlay-transparent">
+                                                    <div class="no-overflow">
+                                                        <img class="img-fluid" src="<?= wp_get_attachment_image_url($image, 'full');?>">
+                                                    </div>
+                                                    <h2 class="slider-subline mt-3"><?= $titel; ?></h2>
                                                 </div>
-                                                <h2 class="slider-subline mt-3"><?= $titel; ?></h2>
-                                            </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
