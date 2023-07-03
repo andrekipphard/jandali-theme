@@ -12154,6 +12154,15 @@ input:-internal-autofill-selected {
     color: white;
   }
 }
+.hero-p {
+  color: #3C3B4D;
+}
+
+@media (max-width: 991.98px) {
+  .hero-p {
+    color: #EDE9E4;
+  }
+}
 @media (min-width: 992px) {
   .height-100 {
     height: 100%;
