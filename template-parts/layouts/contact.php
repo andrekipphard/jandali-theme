@@ -71,8 +71,8 @@
                         <label for="messagerfv" class="form-label text-primary">Ihre Nachricht an uns</label>
                     </div>
                     <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="datenschutztgb" name="datenschutztgb">
-                        <label class="form-check-label text-primary" for="datenschutztgb">Ich habe die Datenschutzrichtlinien gelesen und akzeptiere diese.</label>
+                        <input type="checkbox" class="form-check-input" id="datenschutztgb" name="datenschutztgb" required>
+                        <label class="form-check-label text-primary" for="datenschutztgb">Ich habe die Datenschutzrichtlinien gelesen und akzeptiere diese. *</label>
                     </div>
                     <div class="mb-3 text-primary">
                         <p>Die mit * gekennzeichneten Felder sind Pflichtfelder.</p>
