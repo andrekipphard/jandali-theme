@@ -1,7 +1,8 @@
 <div class="row">
     <div class="col-12 col-lg-6">
         <?php if ( $logo = get_field( 'footer_logo', 'options' ) ):?>
-            <img class="img-fluid footer-logo" src="<?= wp_get_attachment_image_url($logo, 'img-fluid');?>">
+            <?php $alt_text = get_post_meta($logo , '_wp_attachment_image_alt', true);?>
+            <img class="img-fluid footer-logo" src="<?= wp_get_attachment_image_url($logo, 'img-fluid');?>" alt="<?= $alt_text;?>">
         <?php endif;?>
     </div>
     <div class="col-12 col-lg-3">

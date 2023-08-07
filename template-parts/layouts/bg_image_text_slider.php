@@ -32,7 +32,8 @@
                                                     $logo = get_sub_field('logo');
                                                 ?>
                                                     <div class="col-6 col-lg-4 d-flex align-items-center">
-                                                        <img class="logo" src="<?= wp_get_attachment_image_url($logo, 'img-fluid');?>">
+                                                        <?php $alt_text = get_post_meta($logo , '_wp_attachment_image_alt', true);?>
+                                                        <img class="logo" src="<?= wp_get_attachment_image_url($logo, 'img-fluid');?>" v>
                                                     </div>
                                                 <?php endwhile;?>
                                             </div>
@@ -62,7 +63,8 @@
                                                     $logo = get_sub_field('logo');
                                                 ?>
                                                     <div class="col-6 col-lg-4 d-flex align-items-center">
-                                                        <img class="logo" src="<?= wp_get_attachment_image_url($logo, 'img-fluid');?>">
+                                                        <?php $alt_text = get_post_meta($logo , '_wp_attachment_image_alt', true);?>
+                                                        <img class="logo" src="<?= wp_get_attachment_image_url($logo, 'img-fluid');?>" alt="<?= $alt_text;?>">
                                                     </div>
                                                 <?php endwhile;?>
                                             </div>

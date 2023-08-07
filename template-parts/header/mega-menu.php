@@ -23,7 +23,7 @@
                                                     $menuname = get_sub_field('menuname', 'options');
                                                     $url = get_sub_field('url', 'options');?>
                                                     <div class="col-3">
-                                                        <a href="<?= $url; ?>"><img class="img-fluid mb-3" src="<?= wp_get_attachment_image_url($image, 'img-fluid');?>"></a>
+                                                        <a href="<?= $url; ?>"><?php $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?><img class="img-fluid mb-3" src="<?= wp_get_attachment_image_url($image, 'img-fluid');?>" alt="<?= $alt_text;?>"></a>
                                                         <a href="<?= $url; ?>" class="h6 text-secondary px-3"><?= $menuname; ?></a>
                                                         <?php if(have_rows ('menupunkte', 'options')):?>
                                                             <ul class="mt-3 px-3">

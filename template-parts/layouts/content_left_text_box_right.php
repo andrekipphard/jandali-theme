@@ -25,7 +25,8 @@
                         <?php endif;?>
                         <?php if($left_column == 'Image'):?>
                             <div class="col-7">
-                                <img src="<?= wp_get_attachment_image_url($image, 'full');?>" class="img-fluid desktop-image">
+                                <?php $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?>
+                                <img src="<?= wp_get_attachment_image_url($image, 'full');?>" class="img-fluid desktop-image" alt="<?= $alt_text;?>">
                             </div>
                         <?php endif;?>
                         <?php if($left_column == 'Video'):?>
@@ -54,7 +55,7 @@
                             <div class="ps-0 ps-lg-5 d-flex justify-content-center d-lg-block">
                                 <hr class="text-secondary opacity-100 w-50 align-self-center tagline">
                             </div>
-                            <?php if($left_column == 'Parallax' || $left_column == 'Image'):?><img src="<?= wp_get_attachment_image_url($image, 'full');?>" class="img-fluid parallax-mobile mb-5"><?php endif;?>
+                            <?php if($left_column == 'Parallax' || $left_column == 'Image'):?><?php $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?><img src="<?= wp_get_attachment_image_url($image, 'full');?>" class="img-fluid parallax-mobile mb-5" alt="<?= $alt_text;?>"><?php endif;?>
                             <?php if($left_column == 'Video'):?>
                                 <?php if($video_format =='Quer'):?>
                                     <?php if($video_type == 'Youtube'):?>

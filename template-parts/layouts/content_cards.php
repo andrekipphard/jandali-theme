@@ -22,7 +22,8 @@
                 ?>
                     <div class="col-12 col-lg-4">
                         <div class="card content-card border-0 rounded-0 h-100">
-                            <img src="<?= wp_get_attachment_image_url($image, 'img-fluid');?>" class="card-img-top rounded-0">
+                            <?php $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?>
+                            <img src="<?= wp_get_attachment_image_url($image, 'img-fluid');?>" class="card-img-top rounded-0" alt="<?= $alt_text;?>">
                             <div class="card-body py-4 px-5" style="background-color:<?= $background_color_content; ?>">
                                 <h4 class="card-title mt-5 text-primary"><?= $headline;?></h5>
                                 <p class="card-text"><?= $content; ?></p>
