@@ -15,8 +15,9 @@
                     $titel = get_sub_field('titel');
                     $text = get_sub_field('text');
                     $link = get_sub_field('link');
+                    $neuer_tab = get_sub_field('neuer_tab');
                 ?>
-                    <li class="no-before"><b class="text-uppercase"><?= $titel; ?></b><a class="text-white" href="<?= $link; ?>"> <?= $text; ?></a></li>
+                    <li class="no-before"><b class="text-uppercase"><?= $titel; ?></b><a class="text-white" href="<?= $link; ?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>> <?= $text; ?></a></li>
                 <?php endwhile;?>
             </ul>
         <?php endif; ?>
@@ -36,9 +37,10 @@
             while(have_rows('call_to_action', 'options')): the_row();
                 $text = get_sub_field('text');
                 $url = get_sub_field('url');
+                $neuer_tab = get_sub_field('neuer_tab');
         ?>
                 <p class="mb-5 mb-lg-0">
-                    <a href="<?= $url; ?>" class="text-white"><?= $text; ?></a>
+                    <a href="<?= $url; ?>" class="text-white"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><?= $text; ?></a>
                 </p>
             <?php endwhile; ?>
         <?php endif; ?>

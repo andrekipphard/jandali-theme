@@ -19,6 +19,7 @@
                     $background_color_content = get_sub_field('background_color_content');
                     $button_text = get_sub_field('button_text');
                     $button_url = get_sub_field('button_url');
+                    $neuer_tab = get_sub_field('neuer_tab');
                 ?>
                     <div class="col-12 col-lg-4">
                         <div class="card content-card border-0 rounded-0 h-100">
@@ -27,7 +28,7 @@
                             <div class="card-body py-4 px-5" style="background-color:<?= $background_color_content; ?>">
                                 <h4 class="card-title mt-5 text-primary"><?= $headline;?></h5>
                                 <p class="card-text"><?= $content; ?></p>
-                                <?php if($button_text):?><a href="<?= $button_url; ?>"><button class="btn btn-link ps-0" type="button"><i class="bi bi-chevron-right text-secondary"></i><?= $button_text; ?></button></a><?php endif;?>
+                                <?php if($button_text):?><a href="<?= $button_url; ?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><button class="btn btn-link ps-0" type="button"><i class="bi bi-chevron-right text-secondary"></i><?= $button_text; ?></button></a><?php endif;?>
                             </div>
                         </div>
                     </div>

@@ -4,6 +4,7 @@
     $text = get_sub_field('text');
     $button_url = get_sub_field('button_url');
     $background_color = get_sub_field('background_color');
+    $neuer_tab = get_sub_field('neuer_tab');
 ?>
 <div style="background-color:<?= $background_color;?>" id="kontakt">
     <div class="container pt-5 pb-3 py-lg-5">
@@ -18,15 +19,16 @@
                         $titel = get_sub_field('titel');
                         $text = get_sub_field('text');
                         $url = get_sub_field('url');
+                        $neuer_tab = get_sub_field('neuer_tab');
                     ?>
                         <div class="col-12 col-lg-3 mb-3 mb-lg-0">
                             <div class="row">
                                 <div class="col-2">
-                                    <a href="<?=$url;?>"><i class="bi bi-<?= $icon; ?> fs-2 text-primary"></i></a>
+                                    <a href="<?=$url;?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><i class="bi bi-<?= $icon; ?> fs-2 text-primary"></i></a>
                                 </div>
                                 <div class="col-10">
                                     <h6 class="text-uppercase text-primary"><?= $titel; ?></h6>
-                                    <a href="<?=$url;?>"><p class="mb-0 text-primary"><?= $text; ?></p></a>
+                                    <a href="<?=$url;?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><p class="mb-0 text-primary"><?= $text; ?></p></a>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +89,7 @@
                         <p class="mb-0">Oder wollen Sie einen Termin vereinbaren?</p>
                     </div>
                     <div class="col-12 col-lg-7">
-                        <a href="<?= $button_url; ?>"><button class="btn btn-outline-secondary" type="button">Termin vereinbaren</button></a>
+                        <a href="<?= $button_url; ?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><button class="btn btn-outline-secondary" type="button">Termin vereinbaren</button></a>
                     </div>
                 </div>
             </div>

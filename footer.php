@@ -36,8 +36,9 @@
 					<ul class="d-flex">
 						<?php while(have_rows('rechtliches', 'options')): the_row();
 							$text = get_sub_field('text');
-							$url = get_sub_field('url');?>
-							<li class="no-before"><a href="<?= $url; ?>" class="text-white"><?= $text; ?></a></li>
+							$url = get_sub_field('url');
+							$neuer_tab = get_sub_field('neuer_tab');?>
+							<li class="no-before"><a href="<?= $url; ?>" class="text-white"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><?= $text; ?></a></li>
 						<?php endwhile;?>
 					</ul>
 				<?php endif;?>

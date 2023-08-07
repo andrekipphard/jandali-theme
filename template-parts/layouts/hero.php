@@ -21,8 +21,9 @@
                             <?php while(have_rows('buttons')): the_row();
                                 $button_text = get_sub_field('button_text');
                                 $button_url = get_sub_field('button_url');
+                                $neuer_tab = get_sub_field('neuer_tab');
                             ?>
-                                <a href="<?= $button_url; ?>"><button class="btn btn-outline-light me-3 mb-3 mb-lg-0" type="button"><?= $button_text; ?></button></a>
+                                <a href="<?= $button_url; ?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><button class="btn btn-outline-light me-3 mb-3 mb-lg-0" type="button"><?= $button_text; ?></button></a>
                             <?php endwhile;?>
                         <?php endif;?>
                     </div>
@@ -45,8 +46,9 @@
                             <?php while(have_rows('buttons')): the_row();
                                 $button_text = get_sub_field('button_text');
                                 $button_url = get_sub_field('button_url');
+                                $neuer_tab = get_sub_field('neuer_tab');
                             ?>
-                                <a href="<?= $button_url; ?>"><button class="btn btn-outline-light me-3 mb-3 mb-lg-0" type="button"><?= $button_text; ?></button></a>
+                                <a href="<?= $button_url; ?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><button class="btn btn-outline-light me-3 mb-3 mb-lg-0" type="button"><?= $button_text; ?></button></a>
                             <?php endwhile;?>
                         <?php endif;?>
                     </div>

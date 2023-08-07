@@ -6,8 +6,9 @@
         <ul class="mb-0">
             <?php while(have_rows('mitgliedschaften', 'options')): the_row();
                 $image = get_sub_field('image');
-                $url = get_sub_field('url');?>
-                <li class="no-before"><a href="<?= $url; ?>"><?php $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?><img class="img-fluid" src="<?= wp_get_attachment_image_url($image, 'img-fluid');?>" alt="<?= $alt_text;?>"></a></li>
+                $url = get_sub_field('url');
+                $neuer_tab = get_sub_field('neuer_tab');?>
+                <li class="no-before"><a href="<?= $url; ?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><?php $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?><img class="img-fluid" src="<?= wp_get_attachment_image_url($image, 'img-fluid');?>" alt="<?= $alt_text;?>"></a></li>
             <?php endwhile;?>
         </ul>
     </div>

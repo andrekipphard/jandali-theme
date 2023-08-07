@@ -6,6 +6,7 @@
     $background_color = get_sub_field('background_color');
     $border_top = get_sub_field('border_top');
     $text_color = get_sub_field('text_color');
+    $neuer_tab = get_sub_field('neuer_tab');
     if($text_color == "Light"){
         $color = "text-white";
     }
@@ -20,7 +21,7 @@
             </div>
             <div class="px-4 pb-4">
                 <div class="<?php if($text_color == "Light"):?><?=$color;?><?php else:?>text-primary<?endif;?>"><p><?= $text; ?></p></div>
-                <?php if($button_text):?><a href="<?= $button_url; ?>"><button class="btn btn-outline-secondary" type="button"><?= $button_text; ?></button></a><?php endif;?>
+                <?php if($button_text):?><a href="<?= $button_url; ?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><button class="btn btn-outline-secondary" type="button"><?= $button_text; ?></button></a><?php endif;?>
             </div> 
         </div>
     </div>

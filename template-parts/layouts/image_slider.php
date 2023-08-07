@@ -17,11 +17,12 @@
                                     $image = get_sub_field('image');
                                     $titel = get_sub_field('titel');
                                     $url = get_sub_field('url');
+                                    $neuer_tab = get_sub_field('neuer_tab');
                                 ?>
                                 <div class="swiper-slide">
                                     <div class="col d-flex justify-content-center align-items-center">
                                         <div class="p-3">
-                                            <a href="<?=$url;?>">
+                                            <a href="<?=$url;?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>>
                                                 <div class="overlay-transparent">
                                                     <div class="no-overflow">
                                                         <?php $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?>

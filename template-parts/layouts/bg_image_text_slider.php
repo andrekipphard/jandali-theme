@@ -12,6 +12,7 @@
                 $background_image = get_sub_field('background_image');
                 $button_text = get_sub_field('button_text');
                 $button_url = get_sub_field('button_url');
+                $neuer_tab = get_sub_field('neuer_tab');
             ?>
                 <?php if(get_row_index()==1):?>
                     <div class="carousel-item active" style="background-image:url('<?= wp_get_attachment_image_url($background_image, 'full');?>'); background-size:cover; background-position:center; background-repeat:no-repeat; background-attachment: fixed;">
@@ -24,7 +25,7 @@
                                         <h2 class="text-secondary mb-4"><?= $headline; ?></h2>
                                         <p><?= $text; ?></p>
                                         <hr class="text-secondary opacity-100">
-                                        <a href="<?= $button_url; ?>"><button class="btn btn-link ps-0" type="button"><i class="bi bi-chevron-right text-secondary"></i><?= $button_text; ?></button></a>
+                                        <a href="<?= $button_url; ?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><button class="btn btn-link ps-0" type="button"><i class="bi bi-chevron-right text-secondary"></i><?= $button_text; ?></button></a>
                                         
                                         <?php if( have_rows('logos')):?>
                                             <div class="row">
@@ -55,7 +56,7 @@
                                         <h2 class="text-secondary mb-4"><?= $headline; ?></h2>
                                         <p><?= $text; ?></p>
                                         <hr class="text-secondary opacity-100">
-                                        <a href="<?= $button_url; ?>"><button class="btn btn-link ps-0" type="button"><i class="bi bi-chevron-right text-secondary"></i><?= $button_text; ?></button></a>
+                                        <a href="<?= $button_url; ?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><button class="btn btn-link ps-0" type="button"><i class="bi bi-chevron-right text-secondary"></i><?= $button_text; ?></button></a>
                                         
                                         <?php if( have_rows('logos')):?>
                                             <div class="row">
