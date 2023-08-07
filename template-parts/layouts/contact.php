@@ -1,4 +1,9 @@
+<?php if(is_admin()){
+    return;
+}
+?>
 <?php 
+    $required = (is_admin()) ? "" : "required";
     $subline = get_sub_field('subline');
     $headline = get_sub_field('headline');
     $text = get_sub_field('text');
@@ -55,7 +60,7 @@
                     <div class="mb-3">
                         <div class="row px-0">
                             <div class="col-12 col-lg-6 form-floating">
-                                <input type="text" class="form-control" id="nameqay" name="nameqay" placeholder="Vollständiger Name *" required>
+                                <input type="text" class="form-control" id="nameqay" name="nameqay" placeholder="Vollständiger Name *">
                                 <label for="nameqay" class="form-label form-label-margin-left text-primary">Vollständiger Name *</label>
                             </div>
                             <div class="col-12 col-lg-6 form-floating">
@@ -65,7 +70,7 @@
                         </div>
                     </div>
                     <div class="mb-3 form-floating">
-                        <input type="email" class="form-control" id="emailwsx" name="emailwsx" placeholder="E-Mail Adresse *" required> 
+                        <input type="email" class="form-control" id="emailwsx" name="emailwsx" placeholder="E-Mail Adresse *" <?=$required;?>> 
                         <label for="emailwsx" class="form-label text-primary">E-Mail Adresse *</label>
                     </div>
                     <div class="mb-3 form-floating">
@@ -73,7 +78,7 @@
                         <label for="messagerfv" class="form-label text-primary">Ihre Nachricht an uns</label>
                     </div>
                     <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="datenschutztgb" name="datenschutztgb" required>
+                        <input type="checkbox" class="form-check-input" id="datenschutztgb" name="datenschutztgb" <?=$required;?>>
                         <label class="form-check-label text-primary" for="datenschutztgb">Ich habe die Datenschutzrichtlinien gelesen und akzeptiere diese. *</label>
                     </div>
                     <div class="mb-3 text-primary">

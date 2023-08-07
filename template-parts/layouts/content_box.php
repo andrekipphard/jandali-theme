@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="px-4 pb-4">
-                <div class="<?php if($text_color == "Light"):?><?=$color;?><?php else:?>text-primary<?endif;?>"><p><?= $text; ?></p></div>
+                <div class="<?php if($text_color == "Light"):?><?= $color;?><?php else:?>text-primary<?php endif;?>"><p><?= $text; ?></p></div>
                 <?php if($button_text):?><a href="<?= $button_url; ?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><button class="btn btn-outline-secondary" type="button"><?= $button_text; ?></button></a><?php endif;?>
             </div> 
         </div>
