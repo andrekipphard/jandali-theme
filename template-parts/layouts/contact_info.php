@@ -10,7 +10,7 @@
                 $text = get_sub_field('text');
             ?>
                 <div class="d-flex flex-row contact-info-row">
-                    <i class="text-white bi bi-<?= $icon; ?> fs-2"></i>
+                    <i class="text-secondary bi bi-<?= $icon; ?> fs-2"></i>
                     <div class="d-flex flex-column justify-content-center ms-4 ms-lg-3">
                         <h6 class="text-uppercase mb-0 text-white"><?= $titel; ?></h6>
                         <p class="mb-0 text-white"><?= $text; ?></p>

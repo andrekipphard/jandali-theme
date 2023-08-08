@@ -12710,6 +12710,10 @@ input:-internal-autofill-selected {
   --bs-body-font-weight: 300;
 }
 
+.text-tertiary {
+  color: #083649;
+}
+
 .bg-tertiary {
   background-color: #083649;
 }

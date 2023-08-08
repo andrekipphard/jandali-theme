@@ -29,11 +29,11 @@
                         <div class="col-12 col-lg-3 mb-3 mb-lg-0">
                             <div class="row">
                                 <div class="col-2">
-                                    <a href="<?=$url;?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><i class="bi bi-<?= $icon; ?> fs-2 text-primary"></i></a>
+                                    <a href="<?=$url;?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><i class="bi bi-<?= $icon; ?> fs-2 text-secondary"></i></a>
                                 </div>
                                 <div class="col-10">
                                     <h6 class="text-uppercase text-primary"><?= $titel; ?></h6>
-                                    <a href="<?=$url;?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><p class="mb-0 text-primary"><?= $text; ?></p></a>
+                                    <a href="<?=$url;?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><p class="mb-0 text-primary"><b><?= $text; ?></b></p></a>
                                 </div>
                             </div>
                         </div>

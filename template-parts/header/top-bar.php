@@ -8,7 +8,7 @@
                 $link = get_sub_field('link');
                 $neuer_tab = get_sub_field('neuer_tab');
             ?>
-            <li class="no-before"><a href="<?= $link; ?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><?php if($icon):?><i class="bi bi-<?= $icon; ?> me-1"></i><?php endif;?><?= $text; ?></a></li>
+            <li class="no-before"><a class="text-white" href="<?= $link; ?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><?php if($icon):?><i class="bi bi-<?= $icon; ?> me-1"></i><?php endif;?><?= $text; ?></a></li>
             <?php endwhile;?>
         </ul>
         <?php endif;?>
