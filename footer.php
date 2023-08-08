@@ -22,7 +22,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="border-bottom">
+		<div class="border-bottom bg-tertiary">
 			<div class="container">
 				<div class="row py-4 py-lg-5 text-white">
 					<?php get_template_part( 'template-parts/footer/socials' );?>
@@ -30,23 +30,26 @@
 				</div>
 			</div>
 		</div>
-		<div class="container">
-			<div class="site-info text-white pt-4 pb-3">
-				<?php if(have_rows('rechtliches', 'options')):?>
-					<ul class="d-flex">
-						<?php while(have_rows('rechtliches', 'options')): the_row();
-							$text = get_sub_field('text');
-							$url = get_sub_field('url');
-							$neuer_tab = get_sub_field('neuer_tab');?>
-							<li class="no-before"><a href="<?= $url; ?>" class="text-white"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><?= $text; ?></a></li>
-						<?php endwhile;?>
-					</ul>
-				<?php endif;?>
-				<p class="mb-0">
-					© <?php echo date("Y"); ?> <?php if ( $copyright = get_field( 'copyright', 'options' ) ):?><?= $copyright;?><?php endif;?>
-				</p>
-			</div><!-- .site-info -->
+		<div class="bg-tertiary">
+			<div class="container">
+				<div class="site-info text-white pt-4 pb-3">
+					<?php if(have_rows('rechtliches', 'options')):?>
+						<ul class="d-flex">
+							<?php while(have_rows('rechtliches', 'options')): the_row();
+								$text = get_sub_field('text');
+								$url = get_sub_field('url');
+								$neuer_tab = get_sub_field('neuer_tab');?>
+								<li class="no-before"><a href="<?= $url; ?>" class="text-white"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><?= $text; ?></a></li>
+							<?php endwhile;?>
+						</ul>
+					<?php endif;?>
+					<p class="mb-0">
+						© <?php echo date("Y"); ?> <?php if ( $copyright = get_field( 'copyright', 'options' ) ):?><?= $copyright;?><?php endif;?>
+					</p>
+				</div><!-- .site-info -->
+			</div>
 		</div>
+		
 
 	</footer><!-- #colophon -->
 </div><!-- #page -->

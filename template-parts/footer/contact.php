@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-lg-3">
         <?php if ( $logo = get_field( 'footer_logo', 'options' ) ):?>
             <?php $alt_text = get_post_meta($logo , '_wp_attachment_image_alt', true);?>
             <img class="img-fluid footer-logo" src="<?= wp_get_attachment_image_url($logo, 'img-fluid');?>" alt="<?= $alt_text;?>">
@@ -21,8 +21,19 @@
                 <?php endwhile;?>
             </ul>
         <?php endif; ?>
+        <?php if(have_rows('footer_websites', 'options')): ?>
+            <ul>
+                <?php while(have_rows('footer_websites', 'options')): the_row();
+                    $website_text = get_sub_field('website_text');
+                    $website_url = get_sub_field('website_url');
+                    $neuer_tab = get_sub_field('neuer_tab');
+                ?>
+                    <li class="no-before"><a class="text-white" href="<?= $website_url; ?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><b><?= $website_text; ?></b></a></li>
+                <?php endwhile;?>
+            </ul>
+        <?php endif;?>
     </div>
-    <div class="col-12 col-lg-3">
+    <div class="col-12 col-lg-2">
         <?php if ( $unternehmensname = get_field( 'unternehmensname', 'options' ) ):?>
             <div class="h6 text-uppercase text-secondary">
                 <?= $unternehmensname; ?>
