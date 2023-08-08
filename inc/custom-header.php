@@ -8,39 +8,39 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package augusta_beauty
+ * @package lipold
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses augusta_beauty_header_style()
+ * @uses lipold_header_style()
  */
-function augusta_beauty_custom_header_setup() {
+function lipold_custom_header_setup() {
 	add_theme_support(
 		'custom-header',
 		apply_filters(
-			'augusta_beauty_custom_header_args',
+			'lipold_custom_header_args',
 			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
 				'height'             => 250,
 				'flex-height'        => true,
-				'wp-head-callback'   => 'augusta_beauty_header_style',
+				'wp-head-callback'   => 'lipold_header_style',
 			)
 		)
 	);
 }
-add_action( 'after_setup_theme', 'augusta_beauty_custom_header_setup' );
+add_action( 'after_setup_theme', 'lipold_custom_header_setup' );
 
-if ( ! function_exists( 'augusta_beauty_header_style' ) ) :
+if ( ! function_exists( 'lipold_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see augusta_beauty_custom_header_setup().
+	 * @see lipold_custom_header_setup().
 	 */
-	function augusta_beauty_header_style() {
+	function lipold_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

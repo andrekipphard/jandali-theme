@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package augusta_beauty
+ * @package lipold
  */
 
 ?>
@@ -37,7 +37,7 @@
 	
 <div id="page" class="site">
 
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'augusta_beauty' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'lipold' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<?php get_template_part( 'template-parts/header/header-desktop' );?>

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package augusta_beauty
+ * @package lipold
  */
 
 ?>
@@ -14,7 +14,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php augusta_beauty_post_thumbnail(); ?>
+	<?php lipold_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -22,7 +22,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'augusta_beauty' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'lipold' ),
 				'after'  => '</div>',
 			)
 		);
@@ -36,7 +36,7 @@
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'augusta_beauty' ),
+						__( 'Edit <span class="screen-reader-text">%s</span>', 'lipold' ),
 						array(
 							'span' => array(
 								'class' => array(),
