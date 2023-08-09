@@ -11846,7 +11846,7 @@ textarea.form-control-lg {
   display: inline-block;
   margin-right: 10px;
   padding-right: 10px;
-  border-right: 2px solid #013d55;
+  border-right: 1px solid white;
 }
 
 .top-bar > div > ul > li:last-child {
@@ -12009,6 +12009,18 @@ input:-internal-autofill-selected {
 
 .offcanvas-body .main-navigation ul li {
   display: block;
+}
+
+.white-placeholder::-moz-placeholder {
+  color: white;
+}
+
+.white-placeholder:-ms-input-placeholder {
+  color: white;
+}
+
+.white-placeholder::placeholder {
+  color: white;
 }
 
 @media (min-width: 992px) {
@@ -12703,6 +12715,23 @@ input:-internal-autofill-selected {
     display: block;
   }
 }
+.accordion-button:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed):after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23b9912b'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  background-size: cover;
+}
+
+.accordion-button:after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23b9912b'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+}
+
 :root {
   --bs-body-font-family: "Montserrat", sans-serif;
   --bs-heading-color: #3C3B4D;
@@ -12710,8 +12739,16 @@ input:-internal-autofill-selected {
   --bs-body-font-weight: 300;
 }
 
+.underline-light::before {
+  background-color: #fff;
+}
+
 .text-tertiary {
   color: #083649;
+}
+
+b {
+  font-weight: bold;
 }
 
 .bg-tertiary {
@@ -12894,6 +12931,10 @@ ul {
 
 .overlap {
   background-image: linear-gradient(to left, #fff 50%, rgba(192, 192, 192, 0) 50%);
+}
+
+.overlap-left {
+  background-image: linear-gradient(to right, #fff 50%, rgba(192, 192, 192, 0) 50%);
 }
 
 .alert-secondary {

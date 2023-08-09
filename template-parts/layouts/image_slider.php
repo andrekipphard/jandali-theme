@@ -1,9 +1,20 @@
+    
 <?php 
     $background_color = get_sub_field('background_color');
-    if( have_rows('images')):
-?>
+    $headline = get_sub_field('headline');
+    $subline = get_sub_field('subline');
+    if( have_rows('images')):?>
     <div class="swiper-row-desktop" style="background-image: linear-gradient(to bottom, <?= $background_color;?> 0%, <?= $background_color;?> 50%, transparent 50%">
         <div class="py-5">
+            <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h2 class="subline text-uppercase text-secondary pb-1"><?= $subline; ?></h2>
+                    <h3 class="headline pb-3"><?= $headline; ?></h2>
+                </div>
+            </div>
+            </div>
+            
             <div class="row py-5 mx-auto my-auto justify-content-center">
                 <div style="overflow-x: hidden;">
                     <div class="negative-margin">

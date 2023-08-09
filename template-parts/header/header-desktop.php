@@ -13,7 +13,7 @@
                     </button>
                     <label>
                         <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'textdomain' ); ?></span>
-                        <input type="search" class="search-field bg-primary" placeholder="<?php echo esc_attr_x( 'Ihr Suchbegriff', 'placeholder', 'textdomain' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+                        <input type="search" class="search-field bg-primary white-placeholder text-white" placeholder="<?php echo esc_attr_x( 'Ihr Suchbegriff', 'placeholder', 'textdomain' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
                     </label>
                 </form>
 

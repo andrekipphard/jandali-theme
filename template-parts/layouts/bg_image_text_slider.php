@@ -24,8 +24,9 @@
                                         <h3 class="text-uppercase pb-3"><?php if (is_array($slide) && $count > 1):?><?php if(get_row_index()<10):?>0<?php endif;?><?= get_row_index();?><?php endif;?> <span class="gedankenstrich"><?= $subline; ?></span></h3>
                                         <h2 class="text-secondary mb-4"><?= $headline; ?></h2>
                                         <p><?= $text; ?></p>
-                                        <hr class="text-secondary opacity-100">
                                         <a href="<?= $button_url; ?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><button class="btn btn-link ps-0" type="button"><i class="bi bi-chevron-right text-secondary"></i><?= $button_text; ?></button></a>
+                                        <hr class="text-secondary opacity-100">
+                                       
                                         
                                         <?php if( have_rows('logos')):?>
                                             <div class="row">

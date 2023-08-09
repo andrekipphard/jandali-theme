@@ -23,11 +23,13 @@
                 ?>
                     <div class="col-12 col-lg-4">
                         <div class="card content-card border-0 rounded-0 h-100">
+                            <?php if($image):?>
                             <?php $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?>
                             <img src="<?= wp_get_attachment_image_url($image, 'img-fluid');?>" class="card-img-top rounded-0" alt="<?= $alt_text;?>">
+                            <?php endif;?>
                             <div class="card-body py-4 px-5" style="background-color:<?= $background_color_content; ?>">
-                                <h4 class="card-title mt-5 text-primary"><?= $headline;?></h5>
-                                <p class="card-text"><?= $content; ?></p>
+                                <h4 class="card-title<?php if($image):?> mt-5<?php endif;?> text-primary"><?= $headline;?></h5>
+                                <div class="card-text<?php if(!$image):?> mt-5<?php endif;?>"><?= $content; ?></div>
                                 <?php if($button_text):?><a href="<?= $button_url; ?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><button class="btn btn-link ps-0" type="button"><i class="bi bi-chevron-right text-secondary"></i><?= $button_text; ?></button></a><?php endif;?>
                             </div>
                         </div>
