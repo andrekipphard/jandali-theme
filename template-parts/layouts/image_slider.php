@@ -17,14 +17,16 @@
                                     $image = get_sub_field('image');
                                     $titel = get_sub_field('titel');
                                     $url = get_sub_field('url');
+                                    $neuer_tab = get_sub_field('neuer_tab');
                                 ?>
                                 <div class="swiper-slide">
                                     <div class="col d-flex justify-content-center align-items-center">
                                         <div class="p-3">
-                                            <a href="<?=$url;?>">
+                                            <a href="<?=$url;?>"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>>
                                                 <div class="overlay-transparent">
                                                     <div class="no-overflow">
-                                                        <img class="img-fluid" src="<?= wp_get_attachment_image_url($image, 'full');?>">
+                                                        <?php $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?>
+                                                        <img class="img-fluid" src="<?= wp_get_attachment_image_url($image, 'full');?>" alt="<?= $alt_text;?>">
                                                     </div>
                                                     <h2 class="slider-subline mt-3"><?= $titel; ?></h2>
                                                 </div>
@@ -60,7 +62,8 @@
                                         <div class="p-3">
                                             <div class="overlay-transparent">
                                                 <div class="no-overflow">
-                                                    <img class="img-fluid" src="<?= wp_get_attachment_image_url($image, 'full');?>">
+                                                    <?php $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?>
+                                                    <img class="img-fluid" src="<?= wp_get_attachment_image_url($image, 'full');?>" alt="<?= $alt_text;?>">
                                                 </div>
                                                 <h2 class="slider-subline mt-3"><?= $titel; ?></h2>
                                             </div>

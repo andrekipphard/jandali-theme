@@ -13,6 +13,7 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+	<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
@@ -34,7 +35,10 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-	
+<!--<script
+  src='https://widget.superchat.de/snippet.js?applicationKey=WCOzVqDdxywB4e8Rr7ag28MkpX'
+  referrerpolicy='no-referrer-when-downgrade'>
+</script>-->
 <div id="page" class="site">
 
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'augusta_beauty' ); ?></a>

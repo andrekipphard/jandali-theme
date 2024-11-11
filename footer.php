@@ -15,9 +15,7 @@
 		<div class="border-bottom">
 			<div class="container">
 				<div class="row pt-5 pb-3 py-lg-5 text-white">
-					<div class="col-12 col-lg-12">
-						<?php get_template_part( 'template-parts/footer/contact' );?>
-					</div>
+					<?php get_template_part( 'template-parts/footer/contact' );?>
 					<?php get_template_part( 'template-parts/footer/menus' );?>
 				</div>
 			</div>
@@ -33,11 +31,12 @@
 		<div class="container">
 			<div class="site-info text-white pt-4 pb-3">
 				<?php if(have_rows('rechtliches', 'options')):?>
-					<ul class="d-flex">
+					<ul class="d-flex ul-rechtliches">
 						<?php while(have_rows('rechtliches', 'options')): the_row();
 							$text = get_sub_field('text');
-							$url = get_sub_field('url');?>
-							<li class="no-before"><a href="<?= $url; ?>" class="text-white"><?= $text; ?></a></li>
+							$url = get_sub_field('url');
+							$neuer_tab = get_sub_field('neuer_tab')?>
+							<li class="no-before"><a href="<?= $url; ?>" class="text-white"<?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><?= $text; ?></a></li>
 						<?php endwhile;?>
 					</ul>
 				<?php endif;?>

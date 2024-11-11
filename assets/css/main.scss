@@ -199,7 +199,9 @@ ul {
 .parallax-mobile{
     display:none;
 }
-
+.instagram-media{
+	min-width: 0px!important;
+}
 @include media-breakpoint-up(lg){
     .w-lg-75{
         width: 75%!important;

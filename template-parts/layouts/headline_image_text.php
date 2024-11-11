@@ -29,15 +29,18 @@
                     <div class="row">
                         <?php if($overlapping_images == 'Ja'):?>
                             <div class="col-6">
-                                <img class="py-3" src="<?= wp_get_attachment_image_url($image_left, 'large');?>" style="width: 100%; height: auto;">
+                                <?php $alt_text = get_post_meta($image_left , '_wp_attachment_image_alt', true);?>
+                                <img class="py-3" src="<?= wp_get_attachment_image_url($image_left, 'large');?>" style="width: 100%; height: auto;" alt="<?= $alt_text;?>">
                             </div>
                             <div class="col-6">
-                                <img class="py-3 mt-5 image-overlap" src="<?= wp_get_attachment_image_url($image_right, 'large');?>" style="width: 100%; height: auto;">
+                                <?php $alt_text = get_post_meta($image_right , '_wp_attachment_image_alt', true);?>
+                                <img class="py-3 mt-5 image-overlap" src="<?= wp_get_attachment_image_url($image_right, 'large');?>" style="width: 100%; height: auto;" alt="<?= $alt_text;?>">
                             </div>
                         <?php endif;?>
                         <?php if($overlapping_images == 'Nein'):?>
                             <div class="col-12">
-                                <img class="py-3" src="<?= wp_get_attachment_image_url($image, 'large');?>" style="width: 100%; height: auto;">
+                                <?php $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?>
+                                <img class="py-3" src="<?= wp_get_attachment_image_url($image, 'large');?>" style="width: 100%; height: auto;" alt="<?= $alt_text;?>">
                             </div>
                         <?php endif;?>
                     </div>
@@ -50,15 +53,18 @@
                     <div class="row">
                         <?php if($overlapping_images == 'Ja'):?>
                             <div class="col-6">
-                                <img class="py-3" src="<?= wp_get_attachment_image_url($image_left, 'large');?>" style="width: 100%; height: auto;">
+                                <?php $alt_text = get_post_meta($image_left , '_wp_attachment_image_alt', true);?>
+                                <img class="py-3" src="<?= wp_get_attachment_image_url($image_left, 'large');?>" style="width: 100%; height: auto;" alt="<?= $alt_text;?>">
                             </div>
                             <div class="col-6">
-                                <img class="py-3 mt-5 image-overlap" src="<?= wp_get_attachment_image_url($image_right, 'large');?>" style="width: 100%; height: auto;">
+                                <?php $alt_text = get_post_meta($image_right , '_wp_attachment_image_alt', true);?>
+                                <img class="py-3 mt-5 image-overlap" src="<?= wp_get_attachment_image_url($image_right, 'large');?>" style="width: 100%; height: auto;" alt="<?= $alt_text;?>">
                             </div>
                         <?php endif;?>
                         <?php if($overlapping_images == 'Nein'):?>
                             <div class="col-12">
-                                <img class="py-3" src="<?= wp_get_attachment_image_url($image, 'large');?>" style="width: 100%; height: auto;">
+                                <?php $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?>
+                                <img class="py-3" src="<?= wp_get_attachment_image_url($image, 'large');?>" style="width: 100%; height: auto;" alt="<?= $alt_text;?>">
                             </div>
                         <?php endif;?>
                     </div>
@@ -71,15 +77,18 @@
                         <div class="row">
                             <?php if($overlapping_images == 'Ja'):?>
                                 <div class="col-6 position-relative">
-                                    <img class="py-3 image-overlap-right" src="<?= wp_get_attachment_image_url($image_left, 'large');?>" style="width: 100%; height: auto;">
+                                    <?php $alt_text = get_post_meta($image_left , '_wp_attachment_image_alt', true);?>
+                                    <img class="py-3 image-overlap-right" src="<?= wp_get_attachment_image_url($image_left, 'large');?>" style="width: 100%; height: auto;" alt="<?= $alt_text;?>">
                                 </div>
                                 <div class="col-6">
-                                    <img class="py-3 mt-5 " src="<?= wp_get_attachment_image_url($image_right, 'large');?>" style="width: 100%; height: auto;">
+                                    <?php $alt_text = get_post_meta($image_right , '_wp_attachment_image_alt', true);?>
+                                    <img class="py-3 mt-5 " src="<?= wp_get_attachment_image_url($image_right, 'large');?>" style="width: 100%; height: auto;" alt="<?= $alt_text;?>">
                                 </div>
                             <?php endif;?>
                             <?php if($overlapping_images == 'Nein'):?>
                                 <div class="col-12">
-                                    <img class="py-3" src="<?= wp_get_attachment_image_url($image, 'large');?>" style="width: 100%; height: auto;">
+                                    <?php $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?>
+                                    <img class="py-3" src="<?= wp_get_attachment_image_url($image, 'large');?>" style="width: 100%; height: auto;" alt="<?= $alt_text;?>">
                                 </div>
                             <?php endif;?>
                         </div>
@@ -106,15 +115,18 @@
                         <div class="row">
                             <?php if($overlapping_images == 'Ja'):?>
                                 <div class="col-6">
-                                    <img class="py-3" src="<?= wp_get_attachment_image_url($image_left, 'large');?>" style="width: 100%; height: auto;">
+                                    <?php $alt_text = get_post_meta($image_left , '_wp_attachment_image_alt', true);?>
+                                    <img class="py-3" src="<?= wp_get_attachment_image_url($image_left, 'large');?>" style="width: 100%; height: auto;" alt="<?= $alt_text;?>">
                                 </div>
                                 <div class="col-6">
-                                    <img class="py-3 mt-5 image-overlap" src="<?= wp_get_attachment_image_url($image_right, 'large');?>" style="width: 100%; height: auto;">
+                                    <?php $alt_text = get_post_meta($image_right , '_wp_attachment_image_alt', true);?>
+                                    <img class="py-3 mt-5 image-overlap" src="<?= wp_get_attachment_image_url($image_right, 'large');?>" style="width: 100%; height: auto;" alt="<?= $alt_text;?>">
                                 </div>
                             <?php endif;?>
                             <?php if($overlapping_images == 'Nein'):?>
                                 <div class="col-12">
-                                    <img class="py-3" src="<?= wp_get_attachment_image_url($image, 'large');?>" style="width: 100%; height: auto;">
+                                    <?php $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?>
+                                    <img class="py-3" src="<?= wp_get_attachment_image_url($image, 'large');?>" style="width: 100%; height: auto;" alt="<?= $alt_text;?>">
                                 </div>
                             <?php endif;?>
                         </div>

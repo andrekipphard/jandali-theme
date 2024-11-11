@@ -24,7 +24,7 @@
                                     <?php foreach ($chunk as $slide):?>
                                         <div class="col-12 col-lg-6">
                                             <div class="p-3 text-center">
-                                                <img class="quote" src="<?php echo get_template_directory_uri(); ?>/assets/images/Quote_258.png">
+                                                <img class="quote" src="<?php echo get_template_directory_uri(); ?>/assets/images/Quote_258.png" alt="quote">
                                                 <p class="text-white pt-3"><?= $slide['feedback']; ?></p>
                                                 <h3 class="text-secondary text-uppercase pt-3"><?= $slide['name']; ?></h3>
                                             </div>
@@ -57,7 +57,7 @@
                                     <?php foreach ($chunk as $slide):?>
                                         <div class="col-12 col-lg-6">
                                             <div class="p-5 text-center">
-                                                <img class="quote" src="<?php echo get_template_directory_uri(); ?>/assets/images/Quote_258.png">
+                                                <img class="quote" src="<?php echo get_template_directory_uri(); ?>/assets/images/Quote_258.png" alt="quote">
                                                 <p class="text-white pt-3"><?= $slide['feedback']; ?></p>
                                                 <h3 class="text-secondary text-uppercase pt-3"><?= $slide['name']; ?></h3>
                                             </div>

@@ -19,8 +19,8 @@
                         <div class="col-12 col-lg-3 p-0 mb-3 mb-lg-0">
                             <div class="card border-0 rounded-0">
                                 <div class="img-zoom">
-                                    
-                                    <img src="<?= wp_get_attachment_image_url($image, 'img-fluid');?>" class="card-img-top rounded-0">
+                                    <?php $alt_text = get_post_meta($image , '_wp_attachment_image_alt', true);?>
+                                    <img src="<?= wp_get_attachment_image_url($image, 'img-fluid');?>" class="card-img-top rounded-0" alt="<?= $alt_text;?>">
                                     <div class="img-zoom-overlay">
                                     </div>
                                 </div>

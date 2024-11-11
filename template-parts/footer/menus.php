@@ -10,9 +10,10 @@
                 <ul>
                     <?php while(have_rows('menupunkte', 'options')): the_row();
                         $menupunkt = get_sub_field('menupunkt');
-                        $url = get_sub_field('url'); ?>
+                        $url = get_sub_field('url'); 
+                        $neuer_tab = get_sub_field('neuer_tab');?>
                         
-                            <li class="no-before mb-1"><a href="<?= $url; ?>" class="text-white"><?= $menupunkt; ?></a></li>
+                            <li class="no-before mb-1"><a <?php if($neuer_tab == 'Ja'):?> target="_blank"<?php endif;?>><?= $menupunkt; ?></a></li>
                         
                     <?php endwhile; ?>
                 </ul>

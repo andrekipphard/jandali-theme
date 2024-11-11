@@ -12,7 +12,8 @@
             <div class="offcanvas offcanvas-start bg-primary" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                 <div class="offcanvas-header">
                     <?php if ( $logo = get_field( 'footer_logo', 'options' ) ):?>
-                        <img class="img-fluid offcanvas-logo" src="<?= wp_get_attachment_image_url($logo, 'img-fluid');?>">
+                        <?php $alt_text = get_post_meta($logo , '_wp_attachment_image_alt', true);?>
+                        <img class="img-fluid offcanvas-logo" src="<?= wp_get_attachment_image_url($logo, 'img-fluid');?>" alt="<?= $alt_text;?>">
                     <?php endif;?>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
@@ -32,3 +33,21 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    let myOffcanvas = document.getElementById('offcanvasExample');
+
+    // Event-Listener für das Schließen des Offcanvas-Menüs
+    myOffcanvas.addEventListener('hide.bs.offcanvas', function () {
+        // Verhindert Scrollen nach oben, wenn das Menü geschlossen wird
+        const currentScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+        setTimeout(() => {
+            document.documentElement.scrollTop = document.body.scrollTop = currentScrollTop;
+        }, 310); // Wartezeit zum Synchronisieren mit Bootstrap
+    });
+
+   
+</script>
+
+
+

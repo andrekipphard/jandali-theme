@@ -180,49 +180,67 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 require_once get_template_directory() . '/inc/acf.php';
 
 function form_submit_action() {
-	// You can now use $_GET/$_POST variables depending on what method you used in your form
-	// In this case we are using method post
-	$name = sanitize_text_field($_POST['nameInput']);
-	$phone = sanitize_text_field($_POST['phoneInput']);
-	$email = sanitize_email($_POST['emailInput']);
-	$message = sanitize_text_field($_POST['messageInput']);
-	if( empty($name) && empty($email) && empty($message) && empty($subject)){
-		$name = sanitize_text_field($_POST['nameqay']);
-		$phone = sanitize_text_field($_POST['phoneedc']);
-		$email = sanitize_email($_POST['emailwsx']);
-		$message = sanitize_text_field($_POST['messagerfv']);
-		$datenschutz = sanitize_text_field($_POST['datenschutztgb']);
-		
-		// Then do the processing here like create new post/user, update new post/user , etc.
-		// But on this example im gonna show you how send an email, create your own custom html body format.
-		
-		// Send to admin
-		$to = get_bloginfo('admin_email'); // or 'sendee@email.com' to specify email
-		// Email subject
-		$subject = 'Neue Kontaktanfrage';
-		$subject_customer = 'Ihre Kontaktanfrage ist bei uns eingegangen';
-		// Email body/content (tricky part)
-		/* Instead of:
-			$body = '<div>
-						<p>'. $first_name .'</p>
-					</div>'; 
-		*/
-		// We can create a custom function with the post fields as your attributes
-		$body = my_email_body_function($name,$email, $phone,$message,$datenschutz);
-		$body_customer = my_email_body_function_customer($name,$email, $phone,$message,$datenschutz);
-		$headers = array('Content-Type: text/html; charset=UTF-8');
-		wp_mail( $to, $subject, $body, $headers );
-		wp_mail( $email, $subject_customer, $body_customer, $headers);
-		
-		// Then redirect to desired page
-		$redirect = add_query_arg ('kontaktformular', 'gesendet', '/#kontakt');
+	// Stelle sicher, dass hCaptcha überprüft wird
+	$hcaptcha_secret_key = '0xfc97e09b4AAb9BdE876E4038Fbcc351BDce178Fd'; // Ersetze durch deinen Secret Key
+	$response = $_POST['h-captcha-response'];
+
+	$verify_url = "https://hcaptcha.com/siteverify?secret=$hcaptcha_secret_key&response=$response";
+	$response = file_get_contents($verify_url);
+	$response_keys = json_decode($response);
+
+	if (!$response_keys->success) {
+		// hCaptcha-Überprüfung fehlgeschlagen
+		// Gib eine Fehlermeldung aus und verarbeite das Formular nicht weiter
+		$redirect = add_query_arg ('kontaktformular', 'hcaptcha-fehler', '/#kontakt');
 		wp_redirect($redirect);
-		exit;
-		//wp_redirect(home_url('/kontakt'));
+			exit;
+	} else {
+		// You can now use $_GET/$_POST variables depending on what method you used in your form
+		// In this case we are using method post
+		$name = sanitize_text_field($_POST['nameInput']);
+		$phone = sanitize_text_field($_POST['phoneInput']);
+		$email = sanitize_email($_POST['emailInput']);
+		$message = sanitize_text_field($_POST['messageInput']);
+		if( empty($name) && empty($email) && empty($message) && empty($subject)){
+			$name = sanitize_text_field($_POST['nameqay']);
+			$phone = sanitize_text_field($_POST['phoneedc']);
+			$email = sanitize_email($_POST['emailwsx']);
+			$message = sanitize_text_field($_POST['messagerfv']);
+			$datenschutz = sanitize_text_field($_POST['datenschutztgb']);
+
+			// Then do the processing here like create new post/user, update new post/user , etc.
+			// But on this example im gonna show you how send an email, create your own custom html body format.
+
+			// Send to admin
+			$to = get_bloginfo('admin_email'); // or 'sendee@email.com' to specify email
+			// Email subject
+			$subject = 'Neue Kontaktanfrage';
+			$subject_customer = 'Ihre Kontaktanfrage ist bei uns eingegangen';
+			// Email body/content (tricky part)
+			/* Instead of:
+				$body = '<div>
+							<p>'. $first_name .'</p>
+						</div>'; 
+			*/
+			// We can create a custom function with the post fields as your attributes
+			$body = my_email_body_function($name,$email, $phone,$message,$datenschutz);
+			$body_customer = my_email_body_function_customer($name,$email, $phone,$message,$datenschutz);
+			$headers = array('Content-Type: text/html; charset=UTF-8');
+			wp_mail( $to, $subject, $body, $headers );
+			wp_mail( $email, $subject_customer, $body_customer, $headers);
+
+			// Then redirect to desired page
+			$redirect = add_query_arg ('kontaktformular', 'gesendet', '/#kontakt');
+			wp_redirect($redirect);
+			exit;
+			//wp_redirect(home_url('/kontakt'));
+		}
+		else{
+			exit;
+		}
 	}
-	else{
-		exit;
-	}
+	
+
 }
 // Necessary action hooks
 // Use our specific action form_submit_action to process the data related to our request
