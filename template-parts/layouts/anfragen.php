@@ -10,8 +10,18 @@
     $button_url = get_sub_field('button_url');
     $background_color = get_sub_field('background_color');
     $neuer_tab = get_sub_field('neuer_tab');
+    $anfrage = get_sub_field('anfrage');
+    $fullHeight = get_sub_field('full_height');
+    $hideHeaderAndFooter = get_sub_field('hide_header_and_footer');
 ?>
-<div style="background-color:<?= $background_color;?>" id="kontakt">
+<?php if($hideHeaderAndFooter == 'Yes'):?>
+    <style>
+        .site-header, .site-footer {
+            display:none;
+        }
+    </style>
+<?php endif;?>
+<div style="background-color:<?= $background_color;?>;<?php if($fullHeight == 'Yes'):?> height: 100vh; display: flex; justify-content: center; align-items: center;<?php endif;?>" id="kontakt">
     <div class="container pt-5 pb-3 py-lg-5">
         <div class="row py-3 py-lg-5">
             <div class="col">
@@ -56,80 +66,13 @@
                     </div>
                     <!-- Schritt 1: Individuelle Anfragen -->
                     <div class="form-step active">
-                        <h3>Individuelle Anfrage</h3>
-                        <div class="mb-3">
-                            <p class="mb-0">Ich wünsche mir Informationen bzw. einen Beratungstermin zu einer Fettabsaugung an folgender Region:</p>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="fettabsaugung_beine" name="fettabsaugung[]" value="Beine">
-                                <label for="fettabsaugung_beine" class="form-check-label">Beine</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="fettabsaugung_arme" name="fettabsaugung[]" value="Arme">
-                                <label for="fettabsaugung_arme" class="form-check-label">Arme</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="fettabsaugung_rumpf" name="fettabsaugung[]" value="Rumpf">
-                                <label for="fettabsaugung_rumpf" class="form-check-label">Rumpf</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="fettabsaugung_gesicht" name="fettabsaugung[]" value="Gesicht">
-                                <label for="fettabsaugung_gesicht" class="form-check-label">Gesicht</label>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="eigenfetttransplantation" name="eigenfetttransplantation" value="Ich interessiere mich für eine Eigenfetttransplantation">
-                                <label for="eigenfetttransplantation" class="form-check-label">Ich interessiere mich für eine Eigenfetttransplantation</label>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="eigenfetttransplantation_gesicht" name="eigenfetttransplantation[]" value="Zum Gesicht (Faltenbehandlung)">
-                                    <label for="eigenfetttransplantation_gesicht" class="form-check-label">Zum Gesicht (Faltenbehandlung)</label>
-                                </div>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="eigenfetttransplantation_brust" name="eigenfetttransplantation[]" value="Zur Brustvergrößerung">
-                                    <label for="eigenfetttransplantation_brust" class="form-check-label">Zur Brustvergrößerung</label>
-                                </div>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="eigenfetttransplantation_bbl" name="eigenfetttransplantation[]" value="BBL (Gesäßformung)">
-                                    <label for="eigenfetttransplantation_bbl" class="form-check-label">BBL (Gesäßformung)</label>
-                                </div>
-                            </div>
-                        </div>
-                       
-                        <div class="mb-3">
-                            <p class="mb-0">Ich leide an einem Lipödem</p>
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" id="lipoedem_yes" name="lipoedem" value="Ja">
-                                <label for="lipoedem_yes" class="form-check-label">Ja</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" id="lipoedem_no" name="lipoedem" value="Nein">
-                                <label for="lipoedem_no" class="form-check-label">Nein</label>
-                            </div>
-                        </div>
-
-                        <div class="mb-3">
-                            <p class="mb-0">Ich wünsche mir einen Termin:</p>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="termin_selfpay" name="termin[]" value="In der Selbstzahlersprechstunde bei Dr. Jandali (59,50€ inkl. MwSt.)">
-                                <label for="termin_selfpay" class="form-check-label">In der Selbstzahlersprechstunde bei Dr. Jandali (59,50€ inkl. MwSt.)</label>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="termin_insurance" name="termin[]" value="In der Kassensprechstunde der Augusta Praxis (Lipödem Stadium III)">
-                                <label for="termin_insurance" class="form-check-label">In der Kassensprechstunde der Augusta Praxis (Lipödem Stadium III)</label>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="termin_beratung" name="termin_typ" value="Als reinen Beratungstermin, ohne Antragserstellung zur Behandlung des Lipödems">
-                                    <label for="termin_beratung" class="form-check-label">Als reinen Beratungstermin, ohne Antragserstellung zur Behandlung des Lipödems</label>
-                                </div>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="termin_antrag" name="termin[]" value="Zusätzlich wünsch ich eine Erstellung eines Antrags zur Kostenübernahme bei Krankenkasse (60€)">
-                                <label for="termin_antrag" class="form-check-label">Zusätzlich wünsch ich eine Erstellung eines Antrags zur Kostenübernahme bei Krankenkasse (60€)</label>
-                            </div>
-                        </div>
+                        <?php
+                            $dateiname = strtolower(str_replace(' ', '_', $anfrage)) . '.php';
+                            $datei_pfad = get_template_directory() . '/template-parts/layouts/anfragen/' . $dateiname;
+                            include($datei_pfad);
+                            ?>
                         <button type="button" class="btn btn-outline-secondary next-step">Weiter</button>
                     </div>
-
                     <!-- Schritt 2: Allgemeine Informationen -->
                     <div class="form-step">
                         <h3>Allgemeine Informationen</h3>
@@ -216,7 +159,6 @@
                     </div>
 
                 </form>
-
                 <?php
                     // Überprüfen, ob das Formular gesendet wurde
                     if (isset($_POST['cf-submitted'])) {
@@ -227,9 +169,18 @@
                         $phone = sanitize_text_field($_POST['phone']);
 
                         // Anfrageinformationen sammeln
-                        $fettabsaugung = isset($_POST['fettabsaugung']) ? implode(', ', $_POST['fettabsaugung']) : 'Keine Auswahl';
-                        $eigenfetttransplantation = isset($_POST['eigenfetttransplantation']) ? implode(', ', $_POST['eigenfetttransplantation']) : 'Keine Auswahl';
-                        $lipoedem = isset($_POST['lipoedem']) ? sanitize_text_field($_POST['lipoedem']) : 'Keine Auswahl';
+                        if($anfrage == 'Fettabsaugung') { $fettabsaugung = isset($_POST['fettabsaugung']) ? implode(', ', $_POST['fettabsaugung']) : 'Keine Auswahl'; }
+                        if($anfrage == 'Fettabsaugung') { $eigenfetttransplantation = isset($_POST['eigenfetttransplantation']) ? implode(', ', $_POST['eigenfetttransplantation']) : 'Keine Auswahl'; }
+                        if($anfrage == 'Fettabsaugung') { $lipoedem = isset($_POST['lipoedem']) ? sanitize_text_field($_POST['lipoedem']) : 'Keine Auswahl'; }
+                        if($anfrage == 'Straffungsoperationen') { $straffungsoperationen = isset($_POST['straffungsoperationen']) ? implode(', ', $_POST['straffungsoperationen']) : 'Keine Auswahl'; }
+                        if($anfrage == 'Faltenbehandlung') { $faltenbehandlung = isset($_POST['faltenbehandlung']) ? implode(', ', $_POST['faltenbehandlung']) : 'Keine Auswahl'; }
+                        if($anfrage == 'Operative Gesichtsverjüngerung') { $operativeGesichtsbehandlung = isset($_POST['operative-gesichtsbehandlung']) ? implode(', ', $_POST['operative-gesichtsbehandlung']) : 'Keine Auswahl'; }
+                        if($anfrage == 'Operative Gesichtsverjüngerung') { $lidstraffungTyp = isset($_POST['lidstraffung-typ']) ? implode(', ', $_POST['lidstraffung-typ']) : 'Keine Auswahl'; }
+                        if($anfrage == 'Laserbehandlung') { $laserbehandlung = isset($_POST['laserbehandlung']) ? implode(', ', $_POST['laserbehandlung']) : 'Keine Auswahl'; }
+                        if($anfrage == 'Haarfrei Oldenburg') { $haarfreiOldenburgAngebotFrauen = isset($_POST['haarfrei-oldenburg-angebot-frauen']) ? implode(', ', $_POST['haarfrei-oldenburg-angebot-frauen']) : 'Keine Auswahl'; }
+                        if($anfrage == 'Haarfrei Oldenburg') { $haarfreiOldenburgAngebotMaenner = isset($_POST['haarfrei-oldenburg-angebot-maenner']) ? implode(', ', $_POST['haarfrei-oldenburg-angebot-maenner']) : 'Keine Auswahl'; }
+                        if($anfrage == 'Brustoperationen') { $brustoperationen = isset($_POST['brustoperationen']) ? implode(', ', $_POST['brustoperationen']) : 'Keine Auswahl'; }
+                        if($anfrage == 'Behandlungsanfrage Augusta Beauty') { $behandlungsAnfrageAugustaBeauty = isset($_POST['behandlungsanfrage-augusta-beauty']) ? implode(', ', $_POST['behandlungsanfrage-augusta-beauty']) : 'Keine Auswahl'; }
                         $nebenerkrankung = isset($_POST['nebenerkrankung']) ? sanitize_text_field($_POST['nebenerkrankung']) : 'Keine Auswahl';
                         $weiteres = isset($_POST['weiteres']) ? sanitize_text_field($_POST['weiteres']) : 'Keine Auswahl';
                         $kontaktierung = isset($_POST['kontaktierung']) ? sanitize_text_field($_POST['kontaktierung']) : 'Keine Auswahl';
@@ -273,39 +224,49 @@
                         } else {
                             $photo_upload = 'Kein Foto hochgeladen.';
                         }
+                        if($anfrage == 'Fettabsaugung' || $anfrage == 'Straffungsoperationen') {
+                            // Verarbeitung der Termin-Wünsche
+                            $termin = isset($_POST['termin']) ? $_POST['termin'] : [];
+                            $termin_typ = isset($_POST['termin_typ']) ? sanitize_text_field($_POST['termin_typ']) : '';
 
-                        // Verarbeitung der Termin-Wünsche
-                        $termin = isset($_POST['termin']) ? $_POST['termin'] : [];
-                        $termin_typ = isset($_POST['termin_typ']) ? sanitize_text_field($_POST['termin_typ']) : '';
+                            // Variablen für die Termindaten vorbereiten
+                            $termin_text = '';
+                            $termin_with_typ = '';
 
-                        // Variablen für die Termindaten vorbereiten
-                        $termin_text = '';
-                        $termin_with_typ = '';
-
-                        // Alle anderen Terminauswahlen verarbeiten
-                        foreach ($termin as $selected_termin) {
-                            if ($selected_termin == 'In der Kassensprechstunde der Augusta Praxis (Lipödem Stadium III)' && $termin_typ) {
-                                $termin_text .= ($termin_text ? ', ' : '') . $selected_termin . ' - ' . $termin_typ;
+                            // Alle anderen Terminauswahlen verarbeiten
+                            foreach ($termin as $selected_termin) {
+                                if ($selected_termin == 'In der Kassensprechstunde der Augusta Praxis (Lipödem Stadium III)' && $termin_typ) {
+                                    $termin_text .= ($termin_text ? ', ' : '') . $selected_termin . ' - ' . $termin_typ;
+                                }
+                                else {
+                                    $termin_text .= ($termin_text ? ', ' : '') . $selected_termin;
+                                }
                             }
-                            else {
-                                $termin_text .= ($termin_text ? ', ' : '') . $selected_termin;
-                            }
+
+                            // Kombiniere Termintext und zusätzlichen Typ, falls vorhanden
+                            $termin_text .= $termin_with_typ;
                         }
 
-                        // Kombiniere Termintext und zusätzlichen Typ, falls vorhanden
-                        $termin_text .= $termin_with_typ;
 
                         // Nachricht für den Admin
                         $admin_email = 'akipphard@yahoo.de'; // Ersetze durch die E-Mail-Adresse des Admins
-                        $admin_subject = 'Neue Anfrage von ' . $first_name . ' ' . $last_name;
+                        $admin_subject = 'Neue ' . $anfrage . ' Anfrage von ' . $first_name . ' ' . $last_name;
                         $admin_body = "Es ist eine neue Anfrage eingegangen:\n\n";
                         $admin_body .= "Name: $first_name $last_name\n";
                         $admin_body .= "E-Mail: $email\n";
                         $admin_body .= "Telefon: $phone\n\n";
-                        $admin_body .= "Ich wünsche mir Informationen bzw. einen Beratungstermin zu einer Fettabsaugung an folgender Region: $fettabsaugung\n";
-                        $admin_body .= "Ich interessiere mich für eine Eigenfetttransplantation: $eigenfetttransplantation\n";
-                        $admin_body .= "Ich leide an einem Lipödem: $lipoedem\n";
-                        $admin_body .= "Ich wünsche mir einen Termin: $termin_text\n";
+                        if($anfrage == 'Fettabsaugung') { $admin_body .= "Ich wünsche mir Informationen bzw. einen Beratungstermin zu einer Fettabsaugung an folgender Region: $fettabsaugung\n"; }
+                        if($anfrage == 'Fettabsaugung') { $admin_body .= "Ich interessiere mich für eine Eigenfetttransplantation: $eigenfetttransplantation\n"; }
+                        if($anfrage == 'Fettabsaugung') { $admin_body .= "Ich leide an einem Lipödem: $lipoedem\n"; }
+                        if($anfrage == 'Straffungsoperationen') { $admin_body .= "Ich wünsche mir Informationen bzw. einen Termin zu folgenden operativen Eingriffen: $straffungsoperationen\n"; }
+                        if($anfrage == 'Faltenbehandlung') { $admin_body .= "Ich wünsche mir Informationen bzw. einen Termin zu folgenden operativen Eingriffen: $faltenbehandlung\n"; }
+                        if($anfrage == 'Operative Gesichtsverjüngerung') { $admin_body .= "Ich wünsche mir Informationen bzw. einen Termin zu folgenden operativen Eingriffen: $operativeGesichtsbehandlung\n"; }
+                        if($anfrage == 'Operative Gesichtsverjüngerung') { $admin_body .= "Lidstraffung: $lidstraffungTyp\n"; }
+                        if($anfrage == 'Laserbehandlung') { $admin_body .= "Ich wünsche mir Informationen / einen Termin zu folgendem Thema: $laserbehandlung\n"; }
+                        if($anfrage == 'Brustoperationen') { $admin_body .= "Ich wünsche mir Informationen / einen Termin zu folgendem Thema: $brustoperationen\n"; }
+                        if($anfrage == 'Haarfrei Oldenburg') { $admin_body .= "Ich wünsche mir Informationen / einen Termin zur dauerhaften Haarentfernung an folgenden Bereichen: \n Angebot Frauen: $haarfreiOldenburgAngebotFrauen \n Angebot Männer: $haarfreiOldenburgAngebotMaenner \n"; }
+                        if($anfrage == 'Behandlungsanfrage Augusta Beauty') { $admin_body .= "Ich wünsche mir Informationen / einen Termin für folgende Behandlung: $behandlungsAnfrageAugustaBeauty\n"; }
+                        if($anfrage == 'Fettabsaugung' || $anfrage == 'Straffungsoperationen') { $admin_body .= "Ich wünsche mir einen Termin: $termin_text\n"; }
                         $admin_body .= "Haben Sie relevante Nebenerkrankungen?: $nebenerkrankung\n";
                         $admin_body .= "Foto hochgeladen: $photo_upload\n";
                         $admin_body .= "Weitere Fragen oder Anmerkungen?: $weiteres\n";
@@ -320,13 +281,21 @@
                         wp_mail($admin_email, $admin_subject, $admin_body, $headers);
 
                         // Nachricht für den Kunden
-                        $customer_subject = 'Vielen Dank für Ihre Anfrage';
+                        $customer_subject = 'Vielen Dank für Ihre ' . $anfrage . ' Anfrage';
                         $customer_body = "Hallo $first_name,\n\n";
                         $customer_body .= "Vielen Dank für Ihre Anfrage! Wir haben folgende Informationen von Ihnen erhalten:\n\n";
-                        $customer_body .= "Ich wünsche mir Informationen bzw. einen Beratungstermin zu einer Fettabsaugung an folgender Region: $fettabsaugung\n";
-                        $customer_body .= "Ich interessiere mich für eine Eigenfetttransplantation: $eigenfetttransplantation\n";
-                        $customer_body .= "Ich leide an einem Lipödem: $lipoedem\n";
-                        $customer_body .= "Ich wünsche mir einen Termin: $termin_text\n";
+                        if($anfrage == 'Fettabsaugung') { $customer_body .= "Ich wünsche mir Informationen bzw. einen Beratungstermin zu einer Fettabsaugung an folgender Region: $fettabsaugung\n"; }
+                        if($anfrage == 'Fettabsaugung') { $customer_body .= "Ich interessiere mich für eine Eigenfetttransplantation: $eigenfetttransplantation\n"; }
+                        if($anfrage == 'Fettabsaugung') { $customer_body .= "Ich leide an einem Lipödem: $lipoedem\n"; }
+                        if($anfrage == 'Straffungsoperationen') { $customer_body .= "Ich wünsche mir Informationen bzw. einen Termin zu folgenden operativen Eingriffen: $straffungsoperationen\n"; }
+                        if($anfrage == 'Faltenbehandlung') { $customer_body .= "Ich wünsche mir Informationen bzw. einen Termin zu folgenden operativen Eingriffen: $faltenbehandlung\n"; }
+                        if($anfrage == 'Operative Gesichtsverjüngerung') { $customer_body .= "Ich wünsche mir Informationen bzw. einen Termin zu folgenden operativen Eingriffen: $operativeGesichtsbehandlung\n"; }
+                        if($anfrage == 'Operative Gesichtsverjüngerung') { $customer_body .= "Lidstraffung: $lidstraffungTyp\n"; }
+                        if($anfrage == 'Laserbehandlung') { $customer_body .= "Ich wünsche mir Informationen / einen Termin zu folgendem Thema: $laserbehandlung\n"; }
+                        if($anfrage == 'Brustoperationen') { $customer_body .= "Ich wünsche mir Informationen / einen Termin zu folgendem Thema: $brustoperationen\n"; }
+                        if($anfrage == 'Haarfrei Oldenburg') { $customer_body .= "Ich wünsche mir Informationen / einen Termin zur dauerhaften Haarentfernung an folgenden Bereichen: \n Angebot Frauen: $haarfreiOldenburgAngebotFrauen \n Angebot Männer: $haarfreiOldenburgAngebotMaenner \n"; }
+                        if($anfrage == 'Behandlungsanfrage Augusta Beauty') { $customer_body .= "Ich wünsche mir Informationen / einen Termin für folgende Behandlung: $behandlungsAnfrageAugustaBeauty\n"; }
+                        if($anfrage == 'Fettabsaugung' || $anfrage == 'Straffungsoperationen') { $customer_body .= "Ich wünsche mir einen Termin: $termin_text\n"; }
                         $customer_body .= "Haben Sie relevante Nebenerkrankungen?: $nebenerkrankung\n";
                         $customer_body .= "Foto hochgeladen: $photo_upload\n";
                         $customer_body .= "Weitere Fragen oder Anmerkungen?: $weiteres\n";
